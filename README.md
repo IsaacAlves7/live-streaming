@@ -1,4 +1,10 @@
 # live-streaming
-🔛📺📂 This is a repository of Live Streaming.
+🔛📺📂
 
 ## VoD - Video On Demand
+
+## Live Streaming - Online realtime
+
+- Broadcast
+- Multicast
+- Unicast
