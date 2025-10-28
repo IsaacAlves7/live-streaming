@@ -45,7 +45,7 @@ Portanto há sempre um fluxo: **OBS Studio → ProPresenter → Telões** se con
 
 7. Etapas 7 e 8: Para permitir a reprodução, os vídeos podem ser armazenados opcionalmente em um dispositivo de armazenamento como o Amazon S3.
 
-## Live Streaming - Online realtime
+## [Live] Live Streaming - Online realtime
 📺 No nível de engenharia, de forma mais formal e técnica, não no nível de conceito pedagógico. O pipeline conceitual, onde entram os protocolos, os buffers, as camadas, e por que a transmissão ao vivo é fundamentalmente um **problema de sistemas distribuídos + controle de fluxo + compressão temporal adaptativa**.
 
 No contexto técnico, Live Streaming é um **sistema distribuído de transmissão contínua**, definido como:
