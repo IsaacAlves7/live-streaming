@@ -281,5 +281,57 @@ Essa plataforma prepara o conteúdo para consumo em todas as classes de disposit
 
 É como uma via de mão dupla. Comentários, reações e envolvimento do espectador fluem de volta para a emissora, tornando o conteúdo ao vivo profundamente interativo. A construção desse loop exige coordenação em tempo real entre redes, serviços e dispositivos de usuário.
 
+**Requisitos de escalabilidade**: Escalar o Facebook Live é construir uma realidade em que o "pico de tráfego" é a norma. Com mais de 1,23 bilhão de pessoas fazendo login diariamente, a infraestrutura deve assumir alta carga como linha de base, não a exceção.
+
+Alguns requisitos de dimensionamento foram os seguintes:
+
+A escala é o ponto de partida: Este não era um modelo SaaS típico crescendo linearmente. Quando um produto como o Facebook Live se torna global, ele chega a todos os fusos horários, dispositivos e condições de rede simultaneamente.
+
+O sistema deve funcionar em todo o mundo em condições variadas, do rural ao urbano. E todos os dias, ele é empurrado por novos usuários, novos comportamentos e novas demandas. Quase 1,23 bilhão de usuários ativos diários formaram a carga básica. Os padrões de tráfego devem seguir eventos culturais, regionais e globais.
+
+Presença distribuída: POPs e DCs para manter a latência baixa e a confiabilidade alta, o Facebook usa uma combinação de pontos de presença (POPs) e data centers (DCs).
+
+- Os POPs atuam como a primeira linha de conexão, lidando com ingestão e cache local. Eles ficam mais próximos dos usuários e reduzem a contagem de saltos.
+
+- Os DCs lidam com o trabalho pesado: codificando, armazenando e despachando transmissões ao vivo para outros POPs e clientes.
+
+<img width="1456" height="901" alt="image" src="https://github.com/user-attachments/assets/d6d7e43e-802f-44f2-958c-b549b153e267" />
+
+Essa arquitetura permite o isolamento regional e a degradação graciosa. Se um POP cair, outros podem pegar a folga sem uma falha central.
+
+**Desafios de dimensionamento que quebram as coisas**: Aqui estão alguns dos principais desafios de dimensionamento que o Facebook enfrentou que potencialmente criaram problemas:
+
+- Ingestão de fluxo simultâneo: Lidar com milhares de emissoras simultâneas de uma só vez não é trivial. A ingestão e a codificação de transmissões ao vivo exigem alocação de CPU em tempo real, largura de banda previsível e um sistema de roteamento flexível que evita gargalos.
+
+- Picos imprevisíveis de espectadores: os streams raramente seguem um padrão uniforme. Em um momento, um stream tem espectadores mínimos. Em seguida, é viral com 12 milhões. Prever esse pico é quase impossível, e essa imprevisibilidade destrói as estratégias de provisionamento estático. O consumo de largura de banda não é dimensionado linearmente. Balanceadores de carga, caches e codificadores devem se adaptar em segundos, não em minutos.
+
+- Hot Streams e comportamento viral: Alguns streams, como eventos políticos, notícias de última hora, podem se tornar globais sem aviso prévio. Esses eventos afetam as camadas de cache e entrega. Um fluxo pode representar repentinamente 50% de todo o tráfego de espectadores. O sistema deve replicar segmentos de fluxo rapidamente entre POPs e alocar dinamicamente camadas de cache com base na geografia do visualizador.
+
+**Arquitetura de vídeo ao vivo**: O streaming de vídeo ao vivo é sobre o gerenciamento do fluxo em uma rede global imprevisível. Cada sessão ao vivo inicia uma reação em cadeia entre os componentes de infraestrutura criados para lidar com velocidade, escala e caos. A arquitetura do Facebook Live reflete essa necessidade de resiliência em tempo real. 
+
+As transmissões ao vivo se originam de um amplo conjunto de fontes:
+
+Telefones com LTE instável
+
+Desktops com câmeras de alta definição
+
+Configurações profissionais usando a API ao vivo e codificadores de hardware
+
+Esses clientes criam fluxos RTMPS (Real-Time Messaging Protocol Secure). O RTMPS carrega a carga útil de vídeo com baixa latência e criptografia, tornando-o viável para streamers casuais e eventos de nível de produção.
+
+**Pontos de presença (POPs)**: Os POPs atuam como o primeiro ponto de entrada no pipeline de vídeo do Facebook. Eles são clusters regionais de servidores otimizados para:
+
+- Terminando conexões RTMPS perto da origem
+
+- Minimizando a latência de ida e volta para a emissora
+
+- Encaminhamento de fluxos com segurança para o data center apropriado
+
+Cada POP é ajustado para lidar com um alto volume de conexões simultâneas e roteia rapidamente os fluxos usando hashing consistente para distribuir a carga uniformemente.
+
+Veja o diagrama abaixo:
+
+<img width="1456" height="908" alt="image" src="https://github.com/user-attachments/assets/390e5a1d-4876-47a0-8cf5-7fb4c907d336" />
+
 # ⏯️ VoD - Video On Demand
 Pode ser armazenado em um Bucket S3, ou uma instância da Amazon EC2
