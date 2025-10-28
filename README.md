@@ -247,7 +247,7 @@ Veja o diagrama abaixo que mostra uma visão de alto nível dessa infraestrutura
 
 <img width="1456" height="908" alt="image" src="https://github.com/user-attachments/assets/8d3cb91a-bca5-4f9b-a086-eea23754ff3a" />
 
-Uploads rápidos e tolerantes a falhas: O pipeline de upload é onde a jornada de vídeo começa.
+**Uploads rápidos e tolerantes a falhas**: O pipeline de upload é onde a jornada de vídeo começa.
 
 Ele lida com tudo, desde a transmissão de nível de estúdio de uma celebridade até um vídeo de telefone trêmulo em um carro em movimento. Os uploads devem ser rápidos, mas, mais importante, devem ser resilientes. Quedas de rede, conexões instáveis ou peculiaridades do dispositivo não devem paralisar o sistema.
 
@@ -258,6 +258,28 @@ Ele lida com tudo, desde a transmissão de nível de estúdio de uma celebridade
 - A extração de metadados começa durante o upload, permitindo a classificação e o processamento antecipados.
 
 Além da confiabilidade, o sistema agrupa vídeos semelhantes. Isso alimenta mecanismos de recomendação que sugerem conteúdo relacionado aos usuários. O agrupamento acontece com base na semelhança visual e de áudio, não apenas em títulos ou tags. Isso ajuda a exibir vídeos que parecem naturalmente conectados, mesmo que seus metadados discordem.
+
+**Codificação em escala**: A codificação é um gargalo computacionalmente pesado se feita ingenuamente. O Facebook divide os vídeos recebidos em pedaços, codifica-os em paralelo e os une novamente.
+
+Isso reduz enormemente a latência e permite que o sistema seja dimensionado horizontalmente. Alguns recursos são os seguintes:
+
+- Cada parte é transcodificada independentemente em uma frota de servidores.
+
+- As escadas de taxa de bits são geradas dinamicamente para oferecer suporte à reprodução adaptável.
+
+- A remontagem acontece rapidamente sem degradar a qualidade ou sincronizar.
+
+Essa plataforma prepara o conteúdo para consumo em todas as classes de dispositivos e condições de rede. Usuários móveis em zonas rurais, visualizadores de desktop em fibra, todos recebem uma versão que se adapta à sua largura de banda e tela.
+
+**Vídeo ao vivo como cidadão de primeira classe**: As transmissões ao vivo adicionam uma camada de complexidade. Ao contrário dos vídeos enviados, o conteúdo ao vivo chega bruto, é processado em tempo real e deve chegar aos espectadores com o mínimo de atraso. A arquitetura deve absorver o caos da criação em tempo real, mantendo a entrega firme e estável.
+
+- Os clientes de broadcast (telefones, codificadores) se conectam via RTMP seguro a pontos de entrada chamados POPs (Pontos de Presença).
+
+- Os fluxos são roteados por data centers, transcodificados em tempo real e despachados globalmente.
+
+- Os espectadores assistem por meio de aplicativos móveis, navegadores de desktop ou APIs.
+
+É como uma via de mão dupla. Comentários, reações e envolvimento do espectador fluem de volta para a emissora, tornando o conteúdo ao vivo profundamente interativo. A construção desse loop exige coordenação em tempo real entre redes, serviços e dispositivos de usuário.
 
 # ⏯️ VoD - Video On Demand
 Pode ser armazenado em um Bucket S3, ou uma instância da Amazon EC2
