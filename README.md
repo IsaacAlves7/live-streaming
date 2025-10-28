@@ -56,8 +56,6 @@ Tamanhos típicos:
 
 Isso é impraticável para rede. Portanto, entra:
 
----
-
 **2. Encoding (Codec)**: A compressão remove redundância **espacial** e **temporal**.
 
 Um codec como **H.264** usa:
