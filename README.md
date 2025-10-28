@@ -45,8 +45,8 @@ Portanto há sempre um fluxo: **OBS Studio → ProPresenter → Telões** se con
 
 7. Etapas 7 e 8: Para permitir a reprodução, os vídeos podem ser armazenados opcionalmente em um dispositivo de armazenamento como o Amazon S3.
 
-# 📺 Live Streaming - Online realtime
-No nível de engenharia, de forma mais formal e técnica, não no nível de conceito pedagógico. O pipeline conceitual, onde entram os protocolos, os buffers, as camadas, e por que a transmissão ao vivo é fundamentalmente um **problema de sistemas distribuídos + controle de fluxo + compressão temporal adaptativa**.
+## Live Streaming - Online realtime
+📺 No nível de engenharia, de forma mais formal e técnica, não no nível de conceito pedagógico. O pipeline conceitual, onde entram os protocolos, os buffers, as camadas, e por que a transmissão ao vivo é fundamentalmente um **problema de sistemas distribuídos + controle de fluxo + compressão temporal adaptativa**.
 
 No contexto técnico, Live Streaming é um **sistema distribuído de transmissão contínua**, definido como:
 
@@ -229,10 +229,7 @@ Por fim, planos de teste e caos: exercite failover do origin, network partition,
 
 Um diagrama operativo com componentes (ingest edge, transcode pool, packager CMAF, origin, CDN edge, player), ou adapto todo esse design para um ambiente AWS (indicando onde encaixar MediaLive/Elemental, CloudFront, S3, EC2 GPU, Kinesis Video Streams) com nuvem/recursos e o desenho a arquitetura com custos/instâncias recomendadas.
 
-# ⏯️ VoD - Video On Demand
-Pode ser armazenado em um Bucket S3, ou uma instância da Amazon EC2
-
-# Como o Facebook Live chegou a um bilhão de usuários
+## [Live] Como o Facebook Live chegou a um bilhão de usuários
 > [!Warning]
 > Aviso: Os detalhes neste post foram extraídos de artigos/vídeos compartilhados online pela equipe de engenharia do Facebook/Meta. Todos os créditos pelos detalhes técnicos são da equipe de engenharia do Facebook/Meta. Os links para os artigos e vídeos originais estão na seção de referências no final do post. Tentamos analisar os detalhes e fornecer nossa opinião sobre eles. Se você encontrar alguma imprecisão ou omissão, deixe um comentário e faremos o possível para corrigi-la.
 
@@ -243,3 +240,6 @@ O Facebook Live evoluiu rapidamente por necessidade. A partir daquele protótipo
 A equipe de infraestrutura de vídeo do Facebook é responsável pelo caminho de ponta a ponta de cada vídeo. Isso inclui uploads de celulares, codificação distribuída em data centers e reprodução em tempo real em todo o mundo. Eles constroem para escala por padrão, não porque soe bem em um deck, mas porque a escala é uma limitação. Quando 1,2 bilhão de usuários podem apertar o play, uma arquitetura ruim pode levar a problemas.
 
 A infraestrutura necessária para que isso acontecesse se baseava em princípios fundamentais: sistemas combináveis, padrões previsíveis e gerenciamento preciso do caos. Cada transmissão, fosse vinda de uma celebridade ou do quintal de um adolescente, precisava das mesmas garantias: baixa latência, alta disponibilidade e reprodução suave. E cada bug, cada interrupção, cada pico inesperado forçava a equipe a construir de forma mais inteligente, não maior.
+
+# ⏯️ VoD - Video On Demand
+Pode ser armazenado em um Bucket S3, ou uma instância da Amazon EC2
