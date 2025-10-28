@@ -1,4 +1,6 @@
 # 📹 Live Streaming
+<a href="https://www.youtube.com/watch?v=14K_a2kKTxU"><img src="https://img.shields.io/badge/Python-API_Pagination-red?style=flat&logo=Python&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/R-LIVE-red?style=flat&logo=R&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/Tensorflow-LIVE-red?style=flat&logo=Tensorflow&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/Pytorch-LIVE-red?style=flat&logo=Pytorch&logoColor=white"></a> <a href="https://www.youtube.com/@PROFESSORKENNYOFICIAL"><img src="https://img.shields.io/badge/Keras-LIVE-red?style=flat&logo=Keras&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/OpenAI-LIVE-red?style=flat&logo=OpenAI&logoColor=white"></a> <a href="https://notebooklm.google/"><img src="https://img.shields.io/badge/GCP-LIVE-red?style=flat&logo=googlecloud&logoColor=white"></a> <a href="https://notebooklm.google/"><img src="https://img.shields.io/badge/Excalidraw-LIVE-red?style=flat&logo=Excalidraw&logoColor=white"></a>
+
 <img src="https://github.com/user-attachments/assets/e110d977-238e-4ed2-98a2-a2e86e6f25cb" align="right" height="77">
 
 **Live Streaming**, do ponto de vista da ciência da computação, é essencialmente uma estratégia de transmissão contínua de dados, na qual áudio e vídeo são capturados, comprimidos, enviados pela rede em pacotes e reconstruídos do outro lado com o mínimo de atraso possível. A chave aqui não é apenas transmitir, mas transmitir enquanto ainda está acontecendo, o que exige sincronização, protocolos adequados, buffers inteligentes e controle de latência.
@@ -26,6 +28,22 @@ E quando você pensa no streaming massivo, como YouTube, Twitch ou lives em igre
 Ou seja, por trás de algo simples como “assistir uma live”, existe um conjunto de decisões arquiteturais, matemáticas e científicas extremamente complexas. Streaming é, no fundo, **engenharia de tempo real aplicada à comunicação digital**, lidando com a fluidez do tempo, instabilidades da rede e fragilidade da informação.
 
 Portanto há sempre um fluxo: **OBS Studio → ProPresenter → Telões** se conectam na prática, incluindo NDI, sincronização, pacotes multicast e ajustes de jitter.
+
+![unnamed](https://github.com/user-attachments/assets/88d46b30-7f32-4607-86aa-63213ec82d47)
+
+1. Etapa 1: O streamer inicia sua transmissão. A fonte pode ser qualquer fonte de vídeo e áudio conectada a um codificador.
+
+2. Etapa 2: Para fornecer as melhores condições de upload para o streamer, a maioria das plataformas de transmissão ao vivo oferece servidores de ponto de presença em todo o mundo. O streamer se conecta a um servidor de ponto de presença mais próximo.
+
+3. Etapa 3: O fluxo de vídeo recebido é transcodificado para diferentes resoluções e dividido em segmentos de vídeo menores, com alguns segundos de duração.
+
+4. Etapa 4: Os segmentos de vídeo são empacotados em diferentes formatos de transmissão ao vivo que os players de vídeo podem entender. O formato de transmissão ao vivo mais comum é o HLS, ou HTTP Live Streaming.
+
+5. Etapa 5: O manifesto HLS resultante e os blocos de vídeo da etapa de empacotamento são armazenados em cache pela CDN.
+
+6. Etapa 6: Finalmente, o vídeo começa a chegar ao player de vídeo do espectador.
+
+7. Etapas 7 e 8: Para permitir a reprodução, os vídeos podem ser armazenados opcionalmente em um dispositivo de armazenamento como o Amazon S3.
 
 # 📺 Live Streaming - Online realtime
 No nível de engenharia, de forma mais formal e técnica, não no nível de conceito pedagógico. O pipeline conceitual, onde entram os protocolos, os buffers, as camadas, e por que a transmissão ao vivo é fundamentalmente um **problema de sistemas distribuídos + controle de fluxo + compressão temporal adaptativa**.
