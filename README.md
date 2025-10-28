@@ -241,5 +241,23 @@ A equipe de infraestrutura de vídeo do Facebook é responsável pelo caminho de
 
 A infraestrutura necessária para que isso acontecesse se baseava em princípios fundamentais: sistemas combináveis, padrões previsíveis e gerenciamento preciso do caos. Cada transmissão, fosse vinda de uma celebridade ou do quintal de um adolescente, precisava das mesmas garantias: baixa latência, alta disponibilidade e reprodução suave. E cada bug, cada interrupção, cada pico inesperado forçava a equipe a construir de forma mais inteligente, não maior.
 
+Componentes principais por trás do vídeo do Facebook, no centro da estratégia de vídeo do Facebook está uma infraestrutura extensa. Cada componente desempenha um papel específico para garantir que o conteúdo de vídeo flua sem problemas dos criadores para os espectadores, não importa onde eles estejam ou qual dispositivo estejam usando.
+
+Veja o diagrama abaixo que mostra uma visão de alto nível dessa infraestrutura:
+
+<img width="1456" height="908" alt="image" src="https://github.com/user-attachments/assets/8d3cb91a-bca5-4f9b-a086-eea23754ff3a" />
+
+Uploads rápidos e tolerantes a falhas: O pipeline de upload é onde a jornada de vídeo começa.
+
+Ele lida com tudo, desde a transmissão de nível de estúdio de uma celebridade até um vídeo de telefone trêmulo em um carro em movimento. Os uploads devem ser rápidos, mas, mais importante, devem ser resilientes. Quedas de rede, conexões instáveis ou peculiaridades do dispositivo não devem paralisar o sistema.
+
+- Os uploads são divididos em partes para dar suporte à retomada e reduzir o custo de repetição.
+
+- Caminhos redundantes e novas tentativas protegem contra falhas parciais.
+
+- A extração de metadados começa durante o upload, permitindo a classificação e o processamento antecipados.
+
+Além da confiabilidade, o sistema agrupa vídeos semelhantes. Isso alimenta mecanismos de recomendação que sugerem conteúdo relacionado aos usuários. O agrupamento acontece com base na semelhança visual e de áudio, não apenas em títulos ou tags. Isso ajuda a exibir vídeos que parecem naturalmente conectados, mesmo que seus metadados discordem.
+
 # ⏯️ VoD - Video On Demand
 Pode ser armazenado em um Bucket S3, ou uma instância da Amazon EC2
