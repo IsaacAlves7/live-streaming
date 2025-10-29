@@ -127,18 +127,18 @@ Isso permite o envio entre PCs na mesma LAN **sem precisar de servidor intermedi
 
 Ele armazena:
 
-[
+```math
 B(t) = T_{recv} - T_{play}
-]
+```
 
 Se o buffer cai para zero → travamento.
 Se o buffer aumenta demais → atraso perceptível.
 
 Live Streaming ajusta isso dinamicamente:
 
-[
+```math
 B'(t) = f(Jitter, Packet\ Loss, Bandwidth)
-]
+```
 
 Onde **Jitter** = variação no tempo de chegada de pacotes.
 
