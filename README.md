@@ -230,6 +230,10 @@ Por fim, planos de teste e caos: exercite failover do origin, network partition,
 Um diagrama operativo com componentes (ingest edge, transcode pool, packager CMAF, origin, CDN edge, player), ou adapto todo esse design para um ambiente AWS (indicando onde encaixar MediaLive/Elemental, CloudFront, S3, EC2 GPU, Kinesis Video Streams) com nuvem/recursos e o desenho a arquitetura com custos/instâncias recomendadas.
 
 ## [Live] Como o Facebook Live chegou a um bilhão de usuários
+O **Facebook Live** não atingiu um bilhão de usuários por acidente. Chegou lá por meio de engenharia deliberada e pragmática. A arquitetura foi projetada para sobreviver ao caos na produção.
+
+A história começa com um fluxo de relógio em um telhado, mas rapidamente muda para decisões sob pressão: escolher RTMP porque funcionava, agrupar uploads para sobreviver a redes esquisitas e armazenar manifestos em cache para evitar rebanhos trovejantes (thundering herds).
+
 > [!Warning]
 > Aviso: Os detalhes neste post foram extraídos de artigos/vídeos compartilhados online pela equipe de engenharia do Facebook/Meta. Todos os créditos pelos detalhes técnicos são da equipe de engenharia do Facebook/Meta. Os links para os artigos e vídeos originais estão na seção de referências no final do post. Tentamos analisar os detalhes e fornecer nossa opinião sobre eles. Se você encontrar alguma imprecisão ou omissão, deixe um comentário e faremos o possível para corrigi-la.
 
@@ -311,11 +315,9 @@ Essa arquitetura permite o isolamento regional e a degradação graciosa. Se um 
 
 As transmissões ao vivo se originam de um amplo conjunto de fontes:
 
-Telefones com LTE instável
-
-Desktops com câmeras de alta definição
-
-Configurações profissionais usando a API ao vivo e codificadores de hardware
+- Telefones com LTE instável
+- Desktops com câmeras de alta definição
+- Configurações profissionais usando a API ao vivo e codificadores de hardware
 
 Esses clientes criam fluxos RTMPS (Real-Time Messaging Protocol Secure). O RTMPS carrega a carga útil de vídeo com baixa latência e criptografia, tornando-o viável para streamers casuais e eventos de nível de produção.
 
@@ -332,6 +334,106 @@ Cada POP é ajustado para lidar com um alto volume de conexões simultâneas e r
 Veja o diagrama abaixo:
 
 <img width="1456" height="908" alt="image" src="https://github.com/user-attachments/assets/390e5a1d-4876-47a0-8cf5-7fb4c907d336" />
+
+**Centros de dados**: Depois que um POP encaminha um fluxo, o trabalho pesado acontece em um data center do Facebook. É aqui que a codificação hospeda:
+
+- Autenticar fluxos de entrada usando tokens de fluxo
+- Reivindique a propriedade de cada fluxo para garantir uma única fonte de verdade
+- Transcodifique vídeo em várias taxas de bits e resoluções
+- Gere formatos de reprodução como DASH e HLS
+- Arquivar o fluxo para reprodução ou visualização sob demanda
+
+<img width="1456" height="908" alt="image" src="https://github.com/user-attachments/assets/cbf07d6a-0fe0-46e9-b4b2-3689cd78aa20" />
+
+Cada data center opera como um mini nó CDN, adaptado às necessidades específicas e padrões de tráfego do Facebook.
+
+**Armazenamento em cache e distribuição**: O vídeo ao vivo pressiona a distribuição de maneiras que o vídeo sob demanda não faz.
+
+Com conteúdo pré-gravado, tudo pode ser armazenado em cache com antecedência. Mas em uma transmissão ao vivo, o conteúdo está sendo criado enquanto está sendo consumido. Isso transfere o fardo do armazenamento para a coordenação. A resposta do Facebook foi projetar uma estratégia de cache que pudesse suportar isso.
+
+A arquitetura usa um modelo de cache de duas camadas:
+
+- POPs (Pontos de Presença): atuam como camadas de cache local próximas aos usuários. Eles mantêm segmentos de fluxo e arquivos de manifesto buscados recentemente, mantendo os espectadores fora do data center o máximo possível.
+
+- DCs (Data Centers): atuam como caches de origem. Se um POP falhar, ele retornará a um DC para recuperar o segmento ou manifesto. Isso evita que os hosts de codificação sejam sobrecarregados por solicitações repetidas.
+
+Essa separação permite dimensionamento independente e flexibilidade regional. À medida que mais visualizadores se conectam de uma região, o POP correspondente é dimensionado, armazenando em cache o conteúdo quente localmente e protegendo os sistemas centrais.
+
+**Gerenciando o rebanho trovejante**: Na primeira vez que um stream se torna viral, centenas ou milhares de clientes podem solicitar o mesmo manifesto ou segmento de uma só vez. Se todos eles atingirem o data center diretamente, o sistema terá problemas.
+
+Para evitar isso, o Facebook usa tempos limite de bloqueio de cache:
+
+- Quando um POP não tem o conteúdo solicitado, ele envia uma busca upstream.
+- Todas as outras solicitações desse conteúdo são retidas.
+- Se a primeira solicitação for bem-sucedida, o resultado preencherá o cache e todos receberão uma ocorrência.
+- Se o tempo acabar, todos inundarão o DC, causando um rebanho trovejante.
+
+O equilíbrio é complicado:
+
+- Se o tempo limite for muito curto, o rebanho será solto com muita frequência.
+- Se o tempo limite for muito longo, os espectadores começarão a experimentar atraso ou tremulação.
+
+<img width="1456" height="908" alt="image" src="https://github.com/user-attachments/assets/6643764e-93f3-4720-99ea-275dce403ac5" />
+
+Manter os manifestos atualizados
+As transmissões ao vivo dependem de manifestos: um sumário que lista os segmentos disponíveis. Mantê-los atualizados é crucial para uma reprodução suave.
+
+O Facebook usa duas técnicas:
+
+TTL (Time to Live): Cada manifesto tem uma janela de expiração curta, geralmente de alguns segundos. Os clientes buscam novamente o manifesto quando ele expira.
+
+HTTP Push: Uma opção mais avançada, em que as atualizações são enviadas para POPs quase em tempo real. Isso reduz as leituras obsoletas e acelera a disponibilidade do segmento.
+
+O HTTP Push é preferível quando a latência apertada é importante, especialmente para fluxos com alta interação ou conteúdo acelerado. O TTL é mais simples, mas vem com compensações em frescor e eficiência.
+
+Reprodução de vídeo ao vivo
+A reprodução ao vivo tem a ver com consistência, velocidade e adaptabilidade em redes que não se importam com a experiência do usuário.
+
+O pipeline de reprodução ao vivo do Facebook transforma uma mangueira de incêndio de vídeo em tempo real em uma sequência de solicitações HTTP confiáveis, e o DASH é a espinha dorsal que faz isso funcionar.
+
+DASH (Streaming Adaptativo Dinâmico sobre HTTP), o DASH divide o vídeo ao vivo em dois componentes:
+
+1. Um arquivo de manifesto que funciona como um sumário.
+
+2. Uma sequência de arquivos de mídia, cada um representando um pequeno segmento de vídeo (geralmente 1 segundo).
+
+O manifesto evolui à medida que o fluxo continua. Novas entradas são anexadas, as antigas caem e os clientes continuam pesquisando para ver o que vem a seguir. Isso cria uma janela sem interrupção, normalmente com alguns minutos de duração, que define o que pode ser assistido no momento.
+
+Os clientes emitem solicitações HTTP GET para o manifesto.
+
+Quando novas entradas aparecem, elas buscam os segmentos correspondentes.
+
+A qualidade do segmento é escolhida com base na largura de banda disponível, evitando buffering ou quedas de qualidade.
+
+Esse modelo funciona porque é simples, sem estado e compatível com cache. E quando bem feito, ele oferece vídeo com atraso de menos de um segundo e alta confiabilidade.
+
+Onde entram os POPs, os clientes de reprodução não se comunicam diretamente com os data centers. Em vez disso, eles passam por POPs: servidores de borda implantados em todo o mundo.
+
+- Os POPs fornecem manifestos e segmentos armazenados em cache para minimizar a latência.
+
+- Se um cliente solicitar algo novo, o POP o buscará no data center mais próximo, armazenará em cache e o retornará.
+
+- Solicitações repetidas de usuários próximos atingem o cache POP em vez de martelar o DC.
+
+- Esse modelo de cache de duas camadas (POPs e DCs) mantém as coisas rápidas e escalonáveis:
+
+- Ele reduz a carga nos hosts de codificação, que são caros para escalar.
+
+- Ele localiza o tráfego, o que significa que interrupções ou picos regionais não se propagam upstream.
+
+- Ele lida com tráfego viral imprevisível com graça, não com pânico.
+
+Algumas lições cortam todas as camadas técnicas:
+
+1. Comece pequeno, itere rápido: A primeira versão do Live pretendia ser lançável. Essa decisão acelerou o aprendizado e forçou a clareza arquitetônica desde o início.
+
+2. Design para escala desde o primeiro dia: os sistemas construídos sem escala em mente geralmente precisam ser reconstruídos. O Live foi arquitetado para lidar com bilhões, mesmo antes da chegada do primeiro bilhão.
+
+3. Incorpore a confiabilidade à arquitetura: redundância, armazenamento em cache e failover tinham que fazer parte do sistema principal. Aparafusá-los mais tarde não teria funcionado.
+
+4. Planeje a flexibilidade nos recursos: de streams de celebridades a vídeos em 360°, a infraestrutura teve que se adaptar rapidamente. Os sistemas estáticos teriam bloqueado a inovação de produtos.
+
+5. Espere o inesperado: conteúdo viral, picos de celebridades e interrupções globais não são casos extremos, mas inevitáveis. Os sistemas que não conseguem lidar com a imprevisibilidade não duram muito.
 
 # ⏯️ VoD - Video On Demand
 Pode ser armazenado em um Bucket S3, ou uma instância da Amazon EC2
