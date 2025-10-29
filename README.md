@@ -249,7 +249,7 @@ Componentes principais por trás do vídeo do Facebook, no centro da estratégia
 
 Veja o diagrama abaixo que mostra uma visão de alto nível dessa infraestrutura:
 
-<img width="1456" height="908" alt="image" src="https://github.com/user-attachments/assets/8d3cb91a-bca5-4f9b-a086-eea23754ff3a" />
+<a href="https://youtu.be/IO4teCbHvZw"><img width="1456" height="908" alt="image" src="https://github.com/user-attachments/assets/8d3cb91a-bca5-4f9b-a086-eea23754ff3a" /></a>
 
 **Uploads rápidos e tolerantes a falhas**: O pipeline de upload é onde a jornada de vídeo começa.
 
