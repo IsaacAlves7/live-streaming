@@ -50,13 +50,13 @@ Portanto há sempre um fluxo: **OBS Studio → ProPresenter → Telões** se con
 
 No contexto técnico, Live Streaming é um **sistema distribuído de transmissão contínua**, definido como:
 
-[
+```math
 S = (C, E, P, D, R)
-]
+```
 
 Onde:
 
-* **C** = Captura (sinal bruto)
+* **C** = <a href="https://github.com/leandromoreira/digital_video_introduction?utm_source=substack&utm_medium=email">Captura</a> (sinal bruto)
 * **E** = Encoding (compressão + quantização)
 * **P** = Protocolos de transporte e encapsulamento
 * **D** = Distribuição (servidor ou CDN)
