@@ -435,5 +435,7 @@ Algumas lições cortam todas as camadas técnicas:
 
 5. Espere o inesperado: conteúdo viral, picos de celebridades e interrupções globais não são casos extremos, mas inevitáveis. Os sistemas que não conseguem lidar com a imprevisibilidade não duram muito.
 
+## [Live] OBS Studio
+
 # ⏯️ VoD - Video On Demand
 Pode ser armazenado em um Bucket S3, ou uma instância da Amazon EC2
