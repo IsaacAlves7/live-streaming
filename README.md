@@ -243,7 +243,7 @@ Por fim, planos de teste e caos: exercite failover do origin, network partition,
 
 Um diagrama operativo com componentes (ingest edge, transcode pool, packager CMAF, origin, CDN edge, player), ou adapto todo esse design para um ambiente AWS (indicando onde encaixar MediaLive/Elemental, CloudFront, S3, EC2 GPU, Kinesis Video Streams) com nuvem/recursos e o desenho a arquitetura com custos/instâncias recomendadas.
 
-<img height="589" align="right" src="https://github.com/user-attachments/assets/1ddc3e18-006d-4212-ad9a-19cc55089595" />
+<img height="589" src="https://github.com/user-attachments/assets/1ddc3e18-006d-4212-ad9a-19cc55089595" />
 
 Outro ponto técnico muito importante é o **NDI - Network Device Interface** é um protocolo de vídeo sobre IP desenvolvido pela NewTek, projetado para transmitir vídeo e áudio de alta qualidade através de redes Ethernet em tempo real. Diferente dos métodos tradicionais de transmissão, que dependem de cabos SDI ou HDMI, o NDI elimina grande parte da limitação física ao transformar a rede local em uma infraestrutura capaz de transportar múltiplos fluxos de vídeo e áudio simultaneamente, com baixa latência e sem compressão perceptível. Em outras palavras, ele transforma qualquer dispositivo conectado à rede — como câmeras, computadores, switchers e softwares de produção — em fontes e destinos de vídeo interconectados, tudo via IP, sem necessidade de hardware dedicado para cada conexão.
 
@@ -254,6 +254,8 @@ Outro ponto essencial do NDI é a sua baixa latência e a sincronia precisa entr
 No contexto atual, em que o streaming se tornou o padrão de comunicação — seja em eventos corporativos, esportes, igrejas ou produções independentes — o NDI tem um papel transformador. Ele democratiza o acesso à produção audiovisual de qualidade, reduz drasticamente os custos e simplifica a complexidade técnica. Além disso, sua compatibilidade com soluções na nuvem e integração com softwares de virtualização o tornam peça fundamental em pipelines híbridos, onde parte da produção ocorre localmente e parte na internet.
 
 Em suma, o NDI é mais do que um protocolo; é uma arquitetura de conectividade audiovisual moderna, que redefine o conceito de produção ao vivo. Ele representa o futuro da transmissão de vídeo profissional, ao integrar flexibilidade, qualidade e eficiência, permitindo que qualquer rede IP se torne um estúdio de broadcast dinâmico, interligado e de alta performance.
+
+<img width="1154" height="567" alt="image" src="https://github.com/user-attachments/assets/def9dbed-fe76-404a-96a3-88eb48eaf53e" />
 
 ## [Live] Como o Facebook Live chegou a um bilhão de usuários
 O **Facebook Live** não atingiu um bilhão de usuários por acidente. Chegou lá por meio de engenharia deliberada e pragmática. A arquitetura foi projetada para sobreviver ao caos na produção.
