@@ -60,7 +60,8 @@ A transmissão ao vivo difere da transmissão regular porque o conteúdo de víd
 
 Os protocolos padrão para streaming ao vivo incluem:
 
-- RTMP (Real-Time Messaging Protocol): Originalmente desenvolvido pela Macromedia para transmitir dados entre um player Flash e um servidor, agora é usado para streaming de dados de vídeo pela internet. Observe que aplicativos de videoconferência como o Skype usam o - - protocolo RTC (Comunicação em Tempo Real) para menor latência.
+- RTMP (Real-Time Messaging Protocol): Originalmente desenvolvido pela Macromedia para transmitir dados entre um player Flash e um servidor, agora é usado para streaming de dados de vídeo pela internet.
+- Observe que aplicativos de videoconferência como o Skype usam o protocolo RTC (Comunicação em Tempo Real) para menor latência.
 - HLS (HTTP Live Streaming): Requer a codificação H.264 ou H.265. Dispositivos Apple aceitam apenas o formato HLS.
 - DASH (Dynamic Adaptive Streaming over HTTP): O DASH não é compatível com dispositivos Apple. Tanto o HLS quanto o DASH suportam streaming com taxa de bits adaptável.
 
