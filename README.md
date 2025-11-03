@@ -29,7 +29,12 @@ Ou seja, por trás de algo simples como “assistir uma live”, existe um conju
 
 Portanto há sempre um fluxo: **OBS Studio → ProPresenter → Telões** se conectam na prática, incluindo NDI, sincronização, pacotes multicast e ajustes de jitter.
 
-![unnamed](https://github.com/user-attachments/assets/88d46b30-7f32-4607-86aa-63213ec82d47)
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/88d46b30-7f32-4607-86aa-63213ec82d47" height="777"></td>
+    <td><img src="https://github.com/user-attachments/assets/638be7fd-73db-434b-a4c2-d2d0be01e23e" height="777"></td>
+  </tr>
+</table>
 
 1. Etapa 1: O streamer inicia sua transmissão. A fonte pode ser qualquer fonte de vídeo e áudio conectada a um codificador.
 
