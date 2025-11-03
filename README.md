@@ -243,6 +243,18 @@ Por fim, planos de teste e caos: exercite failover do origin, network partition,
 
 Um diagrama operativo com componentes (ingest edge, transcode pool, packager CMAF, origin, CDN edge, player), ou adapto todo esse design para um ambiente AWS (indicando onde encaixar MediaLive/Elemental, CloudFront, S3, EC2 GPU, Kinesis Video Streams) com nuvem/recursos e o desenho a arquitetura com custos/instâncias recomendadas.
 
+<img height="589" align="right" src="https://github.com/user-attachments/assets/1ddc3e18-006d-4212-ad9a-19cc55089595" />
+
+Outro ponto técnico muito importante é o **NDI - Network Device Interface** é um protocolo de vídeo sobre IP desenvolvido pela NewTek, projetado para transmitir vídeo e áudio de alta qualidade através de redes Ethernet em tempo real. Diferente dos métodos tradicionais de transmissão, que dependem de cabos SDI ou HDMI, o NDI elimina grande parte da limitação física ao transformar a rede local em uma infraestrutura capaz de transportar múltiplos fluxos de vídeo e áudio simultaneamente, com baixa latência e sem compressão perceptível. Em outras palavras, ele transforma qualquer dispositivo conectado à rede — como câmeras, computadores, switchers e softwares de produção — em fontes e destinos de vídeo interconectados, tudo via IP, sem necessidade de hardware dedicado para cada conexão.
+
+A importância do NDI no live streaming é profunda, pois ele representa a convergência entre o mundo do broadcast tradicional e o universo digital das redes IP. No passado, montar um estúdio de transmissão ao vivo exigia infraestrutura cara, com cabos dedicados, matrizes SDI e conversores físicos. Com o NDI, essa realidade muda completamente: basta uma rede Gigabit padrão e softwares compatíveis para criar um ecossistema de produção altamente escalável e flexível. É possível, por exemplo, capturar o vídeo de uma câmera conectada em um computador e enviá-lo instantaneamente para outro software de produção — como OBS Studio, vMix ou TriCaster — sem nenhum cabo adicional. Essa liberdade de roteamento de vídeo via rede permite que pequenas produções alcancem um nível de profissionalismo que antes era restrito a emissoras de TV.
+
+Outro ponto essencial do NDI é a sua baixa latência e a sincronia precisa entre áudio e vídeo, o que é crucial em transmissões ao vivo. Ele utiliza compressão eficiente baseada em codecs como o SpeedHQ, otimizando a largura de banda sem sacrificar a qualidade. Além disso, o protocolo oferece suporte a metadados, controle remoto de câmeras PTZ, e até mesmo comunicação bidirecional entre dispositivos, permitindo que um switcher envie comandos para a câmera ou receba feedback em tempo real. Isso cria um fluxo de trabalho integrado, no qual todos os dispositivos “conversam” entre si dentro da rede, sem precisar de hardware adicional.
+
+No contexto atual, em que o streaming se tornou o padrão de comunicação — seja em eventos corporativos, esportes, igrejas ou produções independentes — o NDI tem um papel transformador. Ele democratiza o acesso à produção audiovisual de qualidade, reduz drasticamente os custos e simplifica a complexidade técnica. Além disso, sua compatibilidade com soluções na nuvem e integração com softwares de virtualização o tornam peça fundamental em pipelines híbridos, onde parte da produção ocorre localmente e parte na internet.
+
+Em suma, o NDI é mais do que um protocolo; é uma arquitetura de conectividade audiovisual moderna, que redefine o conceito de produção ao vivo. Ele representa o futuro da transmissão de vídeo profissional, ao integrar flexibilidade, qualidade e eficiência, permitindo que qualquer rede IP se torne um estúdio de broadcast dinâmico, interligado e de alta performance.
+
 ## [Live] Como o Facebook Live chegou a um bilhão de usuários
 O **Facebook Live** não atingiu um bilhão de usuários por acidente. Chegou lá por meio de engenharia deliberada e pragmática. A arquitetura foi projetada para sobreviver ao caos na produção.
 
@@ -480,6 +492,7 @@ Neste contexto, o "Canal Globo" ou "CNN" que você assiste no seu celular **é, 
 No entanto, o sinal que chega à sua TV por antena, cabo ou satélite ainda é o broadcast tradicional. Portanto, a emissora mantém duas infraestruturas paralelas: uma de broadcast clássico e outra de streaming moderna.
 
 **Conclusão:** A afirmação "canais de TV são servidores de live streaming" é absolutamente verdadeira quando nos referimos à sua presença online. A TV tradicional, como a conhecemos, está em um processo acelerado de transformação em um serviço de streaming especializado em conteúdo linear ao vivo. O futuro é a completa fusão desses mundos, onde o conceito de "canal" deixará de ser um fluxo transmitido por radiofrequência e se tornará definitivamente um aplicativo que consome um sinal de vídeo de um servidor, sob demanda, pela internet.
+
 ## [Live] OBS Studio
 <img src="https://github.com/user-attachments/assets/84b0ceb8-0d7d-4320-8fcd-0bf96e1040b8" align="right" height="77">
 
