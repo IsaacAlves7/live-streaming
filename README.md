@@ -36,19 +36,33 @@ Portanto há sempre um fluxo: **OBS Studio → ProPresenter → Telões** se con
   </tr>
 </table>
 
-1. Etapa 1: O streamer inicia sua transmissão. A fonte pode ser qualquer fonte de vídeo e áudio conectada a um codificador.
+O diagrama acima explica o que acontece nos bastidores para tornar isso possível.
 
-2. Etapa 2: Para fornecer as melhores condições de upload para o streamer, a maioria das plataformas de transmissão ao vivo oferece servidores de ponto de presença em todo o mundo. O streamer se conecta a um servidor de ponto de presença mais próximo.
+Etapas da Transmissão ao Vivo:
 
-3. Etapa 3: O fluxo de vídeo recebido é transcodificado para diferentes resoluções e dividido em segmentos de vídeo menores, com alguns segundos de duração.
+1. Etapa 1: O streamer inicia sua transmissão. A fonte pode ser qualquer fonte de vídeo e áudio conectada a um codificador. Etapa 1: Os dados brutos do vídeo são capturados por um microfone e uma câmera. Os dados são enviados para o servidor.
 
-4. Etapa 4: Os segmentos de vídeo são empacotados em diferentes formatos de transmissão ao vivo que os players de vídeo podem entender. O formato de transmissão ao vivo mais comum é o HLS, ou HTTP Live Streaming.
+2. Etapa 2: Para fornecer as melhores condições de upload para o streamer, a maioria das plataformas de transmissão ao vivo oferece servidores de ponto de presença em todo o mundo. O streamer se conecta a um servidor de ponto de presença mais próximo. Etapa 2: Os dados do vídeo são comprimidos e codificados. Por exemplo, o algoritmo de compressão separa o fundo e outros elementos do vídeo. Após a compressão, o vídeo é codificado em padrões como o H.264. O tamanho dos dados do vídeo é muito menor após esta etapa.
 
-5. Etapa 5: O manifesto HLS resultante e os blocos de vídeo da etapa de empacotamento são armazenados em cache pela CDN.
+3. Etapa 3: O fluxo de vídeo recebido é transcodificado para diferentes resoluções e dividido em segmentos de vídeo menores, com alguns segundos de duração. Etapa 3: Os dados codificados são divididos em segmentos menores, geralmente com alguns segundos de duração, para que o download ou a transmissão levem muito menos tempo.
 
-6. Etapa 6: Finalmente, o vídeo começa a chegar ao player de vídeo do espectador.
+4. Etapa 4: Os segmentos de vídeo são empacotados em diferentes formatos de transmissão ao vivo que os players de vídeo podem entender. O formato de transmissão ao vivo mais comum é o HLS, ou HTTP Live Streaming. Etapa 4: Os dados segmentados são enviados para o servidor de streaming. O servidor de streaming precisa ser compatível com diferentes dispositivos e condições de rede. Isso é chamado de "Streaming de Taxa de Bits Adaptável". Significa que precisamos gerar vários arquivos com diferentes taxas de bits nas etapas 2 e 3.
+
+5. Etapa 5: O manifesto HLS resultante e os blocos de vídeo da etapa de empacotamento são armazenados em cache pela CDN. Etapa 5: Os dados de streaming ao vivo são enviados para servidores de borda suportados por uma CDN (Rede de Distribuição de Conteúdo). Milhões de espectadores podem assistir ao vídeo a partir de um servidor de borda próximo. A CDN reduz significativamente a latência de transmissão de dados.
+
+6. Etapa 6: Finalmente, o vídeo começa a chegar ao player de vídeo do espectador. Etapa 6: Os dispositivos dos espectadores decodificam e descompactam os dados de vídeo e reproduzem o vídeo em um player de vídeo.
 
 7. Etapas 7 e 8: Para permitir a reprodução, os vídeos podem ser armazenados opcionalmente em um dispositivo de armazenamento como o Amazon S3.
+
+Como funcionam as transmissões ao vivo de vídeo no YouTube, TikTok ou Twitch? A técnica é chamada de transmissão ao vivo (live streaming).
+
+A transmissão ao vivo difere da transmissão regular porque o conteúdo de vídeo é enviado pela internet em tempo real, geralmente com uma latência de apenas alguns segundos. Etapas 7 e 8: Se o vídeo precisar ser armazenado para reprodução posterior, os dados codificados são enviados para um servidor de armazenamento, e os espectadores podem solicitar a reprodução posteriormente.
+
+Os protocolos padrão para streaming ao vivo incluem:
+
+- RTMP (Real-Time Messaging Protocol): Originalmente desenvolvido pela Macromedia para transmitir dados entre um player Flash e um servidor, agora é usado para streaming de dados de vídeo pela internet. Observe que aplicativos de videoconferência como o Skype usam o - - protocolo RTC (Comunicação em Tempo Real) para menor latência.
+- HLS (HTTP Live Streaming): Requer a codificação H.264 ou H.265. Dispositivos Apple aceitam apenas o formato HLS.
+- DASH (Dynamic Adaptive Streaming over HTTP): O DASH não é compatível com dispositivos Apple. Tanto o HLS quanto o DASH suportam streaming com taxa de bits adaptável.
 
 ## [Live] Live Streaming - Online realtime
 📺 No nível de engenharia, de forma mais formal e técnica, não no nível de conceito pedagógico. O pipeline conceitual, onde entram os protocolos, os buffers, as camadas, e por que a transmissão ao vivo é fundamentalmente um **problema de sistemas distribuídos + controle de fluxo + compressão temporal adaptativa**.
