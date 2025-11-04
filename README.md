@@ -25,7 +25,7 @@ O mais fascinante é que, do ponto de vista teórico, transmissão ao vivo é um
 
 E quando você pensa no streaming massivo, como YouTube, Twitch ou lives em igrejas, conferências e eventos, aí entra a **escala**. O servidor não transmite diretamente para cada espectador; ele replica o fluxo em **CDNs** (Content Delivery Networks), que são servidores geograficamente distribuídos que reduzem distância, latência e carga. A transmissão deixa de ser ponto-a-ponto e se torna um **sistema de distribuição global sincronizada**, baseado em cache, redirecionamento e balanceamento.
 
-<a href="https://renewedvision.com/propresenter"><img height="77" align="right" src="https://github.com/user-attachments/assets/93fa67a2-d7a7-44c9-9b5f-43aabaf79d43" /></a>
+<a href="https://renewedvision.com/propresenter"><img height="77" align="right" src="https://github.com/user-attachments/assets/49b2682e-9233-4412-9af6-39b95cfd87e9" /></a>
 
 Ou seja, por trás de algo simples como “assistir uma live”, existe um conjunto de decisões arquiteturais, matemáticas e científicas extremamente complexas. Streaming é, no fundo, **engenharia de tempo real aplicada à comunicação digital**, lidando com a fluidez do tempo, instabilidades da rede e fragilidade da informação.
 
