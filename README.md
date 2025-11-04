@@ -81,6 +81,8 @@ A transmissão ao vivo é um divisor de águas no mundo digital. Entender o cen�
 
 6. HLS, Smooth Streaming e MPEG DASH: Essas são tecnologias de streaming adaptativo que permitem aos espectadores desfrutar de conteúdo ininterrupto, independentemente do dispositivo ou das condições da rede. HTTP Live Streaming (HLS), Smooth Streaming da Microsoft e MPEG DASH são opções populares nesse segmento.
 
+<img width="1207" height="673" alt="live-streaming-with-automated-multi-language-subtitling-architecture e7d92cf2287e08688d5fcd12c3c58da2131f93d4" src="https://github.com/user-attachments/assets/db4337bc-14bb-4792-9d5f-3be67b190a7e" />
+
 Compreender esses componentes, sua interação e seu impacto no processo de transmissão ao vivo é fundamental para criadores de conteúdo, empresas e organizações que buscam engajar e se conectar com seu público em tempo real.
 
 ![1702466507032](https://github.com/user-attachments/assets/342dfc20-b9e9-4eb4-ae34-6a8bc23b041e)
