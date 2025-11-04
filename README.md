@@ -68,6 +68,8 @@ Os protocolos padrão para streaming ao vivo incluem:
 - DASH (Dynamic Adaptive Streaming over HTTP): O DASH não é compatível com dispositivos Apple. Tanto o HLS quanto o DASH suportam streaming com taxa de bits adaptável.
 
 ## [Live] Live Streaming - Online realtime
+<a href="https://www.youtube.com/watch?v=14K_a2kKTxU"><img src="https://img.shields.io/badge/Python-API_Pagination-red?style=flat&logo=Python&logoColor=white"></a> <a href="https://github.com/IsaacAlves7/devsecops/blob/master/pages/cn.md"><img src="https://img.shields.io/badge/CN-LIVE-red?style=flat&logo=GitHub&logoColor=white"></a> <a href="https://github.com/IsaacAlves7/devsecops/blob/master/pages/cn.md"><img src="https://img.shields.io/badge/CN-LIVE-red?style=flat&logo=GitHub&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/Tensorflow-LIVE-red?style=flat&logo=Tensorflow&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/OpenAI-LIVE-red?style=flat&logo=OpenAI&logoColor=white"></a> <a href="https://youtu.be/qXJ3S3T3xJY"><img src="https://img.shields.io/badge/GCP-LIVE-red?style=flat&logo=googlecloud&logoColor=white"></a> <a href="https://notebooklm.google/"><img src="https://img.shields.io/badge/Excalidraw-LIVE-red?style=flat&logo=Excalidraw&logoColor=white"></a>
+
 <img src="https://github.com/user-attachments/assets/34cbd045-084c-4c91-915d-79ea43fff642" align="right" height="177">
 
 No nível de engenharia, de forma mais formal e técnica, não no nível de conceito pedagógico. O pipeline conceitual, onde entram os protocolos, os buffers, as camadas, e por que a transmissão ao vivo é fundamentalmente um **problema de sistemas distribuídos + controle de fluxo + compressão temporal adaptativa**.
