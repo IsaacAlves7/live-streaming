@@ -13,7 +13,7 @@ Agora entra a rede: o fluxo segue por protocolos. No streaming ao vivo, não se 
 
 Só que aí entra o desafio real: **latência**. O delay entre o que a câmera grava e o que o espectador vê pode ser de milissegundos a dezenas de segundos. Quanto menor a janela do buffer (a fila temporária de pacotes antes da reprodução), mais “ao vivo” fica a transmissão — mas menos tolerante a oscilações de rede. Quanto maior o buffer, mais estável, mas menos instantânea. Por isso, streaming é sempre um compromisso entre **velocidade e consistência**.
 
-Esse caminho inteiro: é um pipeline
+Esse caminho inteiro: é um pipeline (fluxo de live streaming)
 
 ```txt
 câmera → codificador → protocolo → servidor → player → decodificador → tela
