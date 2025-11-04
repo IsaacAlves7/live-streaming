@@ -54,11 +54,11 @@ Etapas da Transmissão ao Vivo: O diagrama acima explica o que acontece nos bast
 
 6. Etapa 6: Finalmente, o vídeo começa a chegar ao player de vídeo do espectador. Etapa 6: Os dispositivos dos espectadores decodificam e descompactam os dados de vídeo e reproduzem o vídeo em um player de vídeo.
 
-7. Etapas 7 e 8: Para permitir a reprodução, os vídeos podem ser armazenados opcionalmente em um dispositivo de armazenamento como o Amazon S3.
+7. Etapas 7 e 8: Para permitir a reprodução, os vídeos podem ser armazenados opcionalmente em um dispositivo de armazenamento como o Amazon S3. Etapas 7 e 8: Se o vídeo precisar ser armazenado para reprodução posterior, os dados codificados são enviados para um servidor de armazenamento, e os espectadores podem solicitar a reprodução posteriormente.
 
-Como funcionam as transmissões ao vivo de vídeo no YouTube, TikTok ou Twitch? A técnica é chamada de transmissão ao vivo (live streaming).
+Como funcionam as transmissões ao vivo de vídeo no YouTube, TikTok ou Twitch? A técnica é chamada de transmissão ao vivo (live streaming). A transmissão ao vivo difere da transmissão regular porque o conteúdo de vídeo é enviado pela internet em tempo real, geralmente com uma latência de apenas alguns segundos.
 
-A transmissão ao vivo difere da transmissão regular porque o conteúdo de vídeo é enviado pela internet em tempo real, geralmente com uma latência de apenas alguns segundos. Etapas 7 e 8: Se o vídeo precisar ser armazenado para reprodução posterior, os dados codificados são enviados para um servidor de armazenamento, e os espectadores podem solicitar a reprodução posteriormente.
+<img width="1611" height="670" alt="image" src="https://github.com/user-attachments/assets/d0547485-e602-49bb-a3d9-4cad359c48c3" />
 
 Os protocolos padrão para streaming ao vivo incluem:
 
