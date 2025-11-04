@@ -323,6 +323,8 @@ Um diagrama operativo com componentes (ingest edge, transcode pool, packager CMA
 
 A fonte de vídeo é adaptada seguindo a abordagem de troca de fluxo (ou múltiplas taxas de bits): a fonte de vídeo está disponível em diferentes taxas de bits e resoluções, e um controlador alterna entre uma versão de vídeo e outra para corresponder à largura de banda disponível, evitando interrupções na reprodução e eventos de re-buferização. A figura abaixo mostra a arquitetura do serviço de streaming de vídeo adaptativo que projetamos:
 
+![Frame-21](https://github.com/user-attachments/assets/a6eddf28-4cf8-4723-8ed2-894a2f87e199)
+
 ![AdaptiveStreamingArchitecture](https://github.com/user-attachments/assets/1767c94f-f458-4963-a309-d95779dc3da9)
 
 ## [Live] Como o Facebook Live chegou a um bilhão de usuários
