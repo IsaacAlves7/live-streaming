@@ -31,6 +31,8 @@ Ou seja, por trás de algo simples como “assistir uma live”, existe um conju
 
 Portanto há sempre um fluxo: **OBS Studio → ProPresenter → Telões** se conectam na prática, incluindo NDI, sincronização, pacotes multicast e ajustes de jitter.
 
+O **ProPresenter** é a escolha definitiva em software de produção e apresentação ao vivo. Leve seus eventos para o próximo nível com os recursos intuitivos e visuais impressionantes do ProPresenter.
+
 <table>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/88d46b30-7f32-4607-86aa-63213ec82d47" height="777"></td>
