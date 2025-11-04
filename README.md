@@ -578,6 +578,8 @@ A verdadeira magia do OBS, porém, reside na sua vasta ecossistema de personaliz
 
 Em essência, o OBS Studio democratizou a produção audiovisual de alta qualidade. Ele elimina a barreira de custo de softwares proprietários complexos e caros, colocando nas mãos de qualquer pessoa um estúdio de transmissão completo e poderoso. É a ferramenta que capacita criadores a darem vida às suas ideias, conectarem-se com suas audiências e produzirem conteúdo com um padrão que, até poucos anos atrás, era acessível apenas a profissionais com orçamentos robustos.
 
+<img height="77" align="right" src="https://github.com/user-attachments/assets/783225d3-c283-4670-9d62-11c49671b1a5" />
+
 As legendas são conexões via API, no caso do Holyrics
 
 # ⏯️ VoD - Video On Demand
