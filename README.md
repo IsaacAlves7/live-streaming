@@ -66,7 +66,23 @@ Os protocolos padrão para streaming ao vivo incluem:
 - DASH (Dynamic Adaptive Streaming over HTTP): O DASH não é compatível com dispositivos Apple. Tanto o HLS quanto o DASH suportam streaming com taxa de bits adaptável.
 
 ## [Live] Live Streaming - Online realtime
-📺 No nível de engenharia, de forma mais formal e técnica, não no nível de conceito pedagógico. O pipeline conceitual, onde entram os protocolos, os buffers, as camadas, e por que a transmissão ao vivo é fundamentalmente um **problema de sistemas distribuídos + controle de fluxo + compressão temporal adaptativa**.
+<img src="https://github.com/user-attachments/assets/34cbd045-084c-4c91-915d-79ea43fff642" align="right" height="177">
+
+No nível de engenharia, de forma mais formal e técnica, não no nível de conceito pedagógico. O pipeline conceitual, onde entram os protocolos, os buffers, as camadas, e por que a transmissão ao vivo é fundamentalmente um **problema de sistemas distribuídos + controle de fluxo + compressão temporal adaptativa**.
+
+Em redes de computadores e sistemas distribuídos, **broadcast**, **multicast** e **unicast** são modos de endereçamento e envio de pacotes, ou seja, definem como os dados são transmitidos de um emissor para um ou mais receptores. Essas três abordagens determinam quem recebe uma mensagem e como a rede se comporta durante o envio.
+
+**Unicast** é o modo mais comum e simples: representa uma comunicação **ponto a ponto** entre **um único emissor e um único receptor**. Cada pacote sai da origem e vai diretamente para um destino específico. É o que acontece, por exemplo, quando você acessa um site: seu computador (cliente) envia uma requisição HTTP diretamente ao servidor (endereço IP único), e o servidor responde apenas para você. Esse método é eficiente quando as comunicações são individuais, mas se o mesmo dado precisar ser enviado a muitos receptores, ele se torna caro, porque o emissor precisa duplicar pacotes para cada destino.
+
+**Broadcast**, por outro lado, é uma comunicação **um-para-todos**. Nesse modo, um dispositivo envia um pacote que será recebido **por todos os hosts dentro de uma rede local (LAN)**. É típico do IPv4 em redes Ethernet, onde existe o endereço especial `255.255.255.255` (ou o broadcast da sub-rede). Ele é usado, por exemplo, por protocolos como o ARP (Address Resolution Protocol), que precisa anunciar uma mensagem para todos os dispositivos para descobrir o endereço MAC associado a um IP. Broadcast é eficiente em redes pequenas, mas em redes grandes ou distribuídas causa congestionamento e tráfego desnecessário, já que todos os nós precisam processar mensagens que talvez não sejam para eles.
+
+**Multicast** é um meio-termo: representa uma comunicação **um-para-muitos**, mas de forma **seletiva**. Em vez de enviar para todos (como no broadcast) ou repetir o envio para cada um (como no unicast), o emissor envia **apenas uma cópia do pacote para um grupo de receptores interessados**. Esses receptores fazem parte de um grupo multicast identificado por um endereço IP especial (faixa `224.0.0.0` a `239.255.255.255` no IPv4). Os roteadores e switches cuidam da distribuição eficiente desse pacote apenas aos membros inscritos. É muito usado em streaming de vídeo ao vivo, jogos online e sistemas distribuídos de eventos, porque economiza largura de banda e reduz carga na rede.
+
+Resumindo:
+
+* **Unicast:** um para um — comunicação direta entre dois pontos (ex.: HTTP, SSH).
+* **Broadcast:** um para todos — envia para toda a rede local (ex.: ARP, DHCP discovery).
+* **Multicast:** um para muitos — envia apenas para quem se inscreveu no grupo (ex.: IPTV, videoconferência, atualizações em tempo real).
 
 No contexto técnico, Live Streaming é um **sistema distribuído de transmissão contínua**, definido como:
 
@@ -227,10 +243,6 @@ Nível ainda mais profundo:
 2. **Como calcular bitrate ideal baseado em QP e GOP**
 3. **Como reduzir latência no OBS maximizando qualidade**
 4. **Como montar pipeline corporativo com SRT + HLS Low-Latency**
-
-- Broadcast
-- Multicast
-- Unicast
 
 Seguindo no nível de engenheiro sênior: arquitetura profissional end-to-end, trade-offs práticos e exemplos de comandos/configurações que você pode aplicar direto em um cluster. Os pontos que realmente importam para montar um pipeline confiável, de baixa latência e operacionalizável em produção.
 
