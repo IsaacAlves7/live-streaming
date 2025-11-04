@@ -326,6 +326,8 @@ A fonte de vídeo é adaptada seguindo a abordagem de troca de fluxo (ou múltip
 ![AdaptiveStreamingArchitecture](https://github.com/user-attachments/assets/1767c94f-f458-4963-a309-d95779dc3da9)
 
 ## [Live] Como o Facebook Live chegou a um bilhão de usuários
+<img height="77" align="right" src="https://github.com/user-attachments/assets/4d81a043-a824-4d5d-8f02-32ae53d60cc1" />
+
 O **Facebook Live** não atingiu um bilhão de usuários por acidente. Chegou lá por meio de engenharia deliberada e pragmática. A arquitetura foi projetada para sobreviver ao caos na produção.
 
 A história começa com um fluxo de relógio em um telhado, mas rapidamente muda para decisões sob pressão: escolher RTMP porque funcionava, agrupar uploads para sobreviver a redes esquisitas e armazenar manifestos em cache para evitar rebanhos trovejantes (thundering herds).
