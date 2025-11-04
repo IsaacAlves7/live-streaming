@@ -25,13 +25,15 @@ O mais fascinante é que, do ponto de vista teórico, transmissão ao vivo é um
 
 E quando você pensa no streaming massivo, como YouTube, Twitch ou lives em igrejas, conferências e eventos, aí entra a **escala**. O servidor não transmite diretamente para cada espectador; ele replica o fluxo em **CDNs** (Content Delivery Networks), que são servidores geograficamente distribuídos que reduzem distância, latência e carga. A transmissão deixa de ser ponto-a-ponto e se torna um **sistema de distribuição global sincronizada**, baseado em cache, redirecionamento e balanceamento.
 
-<a href="https://renewedvision.com/propresenter"><img height="77" src="https://github.com/user-attachments/assets/c6a9f3d6-87c1-429d-b380-0e490ade7374" /></a>
+<a href="https://renewedvision.com/propresenter"><img height="77" align="right" src="https://github.com/user-attachments/assets/c6a9f3d6-87c1-429d-b380-0e490ade7374" /></a>
 
 Ou seja, por trás de algo simples como “assistir uma live”, existe um conjunto de decisões arquiteturais, matemáticas e científicas extremamente complexas. Streaming é, no fundo, **engenharia de tempo real aplicada à comunicação digital**, lidando com a fluidez do tempo, instabilidades da rede e fragilidade da informação.
 
 Portanto há sempre um fluxo: **OBS Studio → ProPresenter → Telões** se conectam na prática, incluindo NDI, sincronização, pacotes multicast e ajustes de jitter.
 
 O **ProPresenter** é a escolha definitiva em software de produção e apresentação ao vivo. Leve seus eventos para o próximo nível com os recursos intuitivos e visuais impressionantes do ProPresenter.
+
+Etapas da Transmissão ao Vivo: O diagrama acima explica o que acontece nos bastidores para tornar isso possível.
 
 <table>
   <tr>
@@ -40,7 +42,7 @@ O **ProPresenter** é a escolha definitiva em software de produção e apresenta
   </tr>
 </table>
 
-Etapas da Transmissão ao Vivo: O diagrama acima explica o que acontece nos bastidores para tornar isso possível.
+Como funcionam as transmissões ao vivo de vídeo no YouTube, TikTok ou Twitch? A técnica é chamada de transmissão ao vivo (live streaming). A transmissão ao vivo difere da transmissão regular porque o conteúdo de vídeo é enviado pela internet em tempo real, geralmente com uma latência de apenas alguns segundos:
 
 1. Etapa 1: O streamer inicia sua transmissão. A fonte pode ser qualquer fonte de vídeo e áudio conectada a um codificador. Etapa 1: Os dados brutos do vídeo são capturados por um microfone e uma câmera. Os dados são enviados para o servidor.
 
@@ -55,8 +57,6 @@ Etapas da Transmissão ao Vivo: O diagrama acima explica o que acontece nos bast
 6. Etapa 6: Finalmente, o vídeo começa a chegar ao player de vídeo do espectador. Etapa 6: Os dispositivos dos espectadores decodificam e descompactam os dados de vídeo e reproduzem o vídeo em um player de vídeo.
 
 7. Etapas 7 e 8: Para permitir a reprodução, os vídeos podem ser armazenados opcionalmente em um dispositivo de armazenamento como o Amazon S3. Etapas 7 e 8: Se o vídeo precisar ser armazenado para reprodução posterior, os dados codificados são enviados para um servidor de armazenamento, e os espectadores podem solicitar a reprodução posteriormente.
-
-Como funcionam as transmissões ao vivo de vídeo no YouTube, TikTok ou Twitch? A técnica é chamada de transmissão ao vivo (live streaming). A transmissão ao vivo difere da transmissão regular porque o conteúdo de vídeo é enviado pela internet em tempo real, geralmente com uma latência de apenas alguns segundos.
 
 <img width="1611" height="670" alt="image" src="https://github.com/user-attachments/assets/d0547485-e602-49bb-a3d9-4cad359c48c3" />
 
