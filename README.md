@@ -295,6 +295,10 @@ Por fim, planos de teste e caos: exercite failover do origin, network partition,
 
 Um diagrama operativo com componentes (ingest edge, transcode pool, packager CMAF, origin, CDN edge, player), ou adapto todo esse design para um ambiente AWS (indicando onde encaixar MediaLive/Elemental, CloudFront, S3, EC2 GPU, Kinesis Video Streams) com nuvem/recursos e o desenho a arquitetura com custos/instâncias recomendadas.
 
+A fonte de vídeo é adaptada seguindo a abordagem de troca de fluxo (ou múltiplas taxas de bits): a fonte de vídeo está disponível em diferentes taxas de bits e resoluções, e um controlador alterna entre uma versão de vídeo e outra para corresponder à largura de banda disponível, evitando interrupções na reprodução e eventos de re-buferização. A figura abaixo mostra a arquitetura do serviço de streaming de vídeo adaptativo que projetamos:
+
+![AdaptiveStreamingArchitecture](https://github.com/user-attachments/assets/1767c94f-f458-4963-a309-d95779dc3da9)
+
 ## [Live] Como o Facebook Live chegou a um bilhão de usuários
 O **Facebook Live** não atingiu um bilhão de usuários por acidente. Chegou lá por meio de engenharia deliberada e pragmática. A arquitetura foi projetada para sobreviver ao caos na produção.
 
