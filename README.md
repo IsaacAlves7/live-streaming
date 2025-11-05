@@ -166,6 +166,8 @@ GOP de 1 a 2 segundos
 Poucos B-frames ou nenhum
 ```
 
+![tr-1536x1152](https://github.com/user-attachments/assets/3712a184-8b2f-40aa-ba5c-870c816b8f5c)
+
 **3. Transporte (Protocol Layer)**: Aqui está o coração da transmissão ao vivo.
 
 | Protocolo     | Finalidade                          | Latência    | Observações                            |
