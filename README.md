@@ -588,7 +588,7 @@ Em essência, o OBS Studio democratizou a produção audiovisual de alta qualida
 
 <img height="77" align="right" src="https://github.com/user-attachments/assets/783225d3-c283-4670-9d62-11c49671b1a5" />
 
-As **legendas** são conexões via API, no caso do Holyrics, uma é para os hinos da harpa ou letra de louvores, divididos em parágrafos de dois ou três estrofes, e no outro de Bíblia Sagrada contendo os capítulos e versículos, o processo é feito manualmente.
+As **legendas** são conexões via API, no caso do Holyrics são plugins que o mesmo disponibiliza, uma é para os hinos da harpa ou letra de louvores, divididos em parágrafos de dois ou três estrofes, e no outro de Bíblia Sagrada contendo os capítulos e versículos, o processo de seleção é feito manualmente.
 
 # ⏯️ VoD - Video On Demand
 <img src="https://github.com/user-attachments/assets/5d47fb89-557e-4581-abb8-4d1b2fd19ea2" align="right" height="77">
