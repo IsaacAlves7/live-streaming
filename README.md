@@ -166,9 +166,17 @@ GOP de 1 a 2 segundos
 Poucos B-frames ou nenhum
 ```
 
-![Workflow-production-setup-768x512](https://github.com/user-attachments/assets/53f34a79-dad8-4ba6-a144-ebc0adff952a)
-
-![tr-1536x1152](https://github.com/user-attachments/assets/3712a184-8b2f-40aa-ba5c-870c816b8f5c)
+<table>
+  <tr>
+    <td>Encoding</td>
+    <td>Transcoding</td>
+  </tr>
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/53f34a79-dad8-4ba6-a144-ebc0adff952a"></td>
+    <td><img src="https://github.com/user-attachments/assets/58cda0d9-4102-4e6f-b82d-92a00bcdd502"></td>
+  </tr>
+</table>
 
 **3. Transporte (Protocol Layer)**: Aqui está o coração da transmissão ao vivo.
 
