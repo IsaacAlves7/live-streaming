@@ -177,17 +177,19 @@ Poucos B-frames ou nenhum
 | **MPEG-DASH** | Delivery adaptativo                 | Alta        | Similar ao HLS, independente da Apple  |
 | **NDI**       | Rede local sem compressão agressiva | Muito baixa | Ideal para switcher, ProPresenter, OBS |
 
-No seu caso (OBS → ProPresenter), **NDI** é frequentemente a ligação:
-
-```
-NDI = Vídeo + Áudio + Metadata encapsulados em fluxos UDP multicast
-```
+No seu caso (OBS → ProPresenter).
 
 <img height="77" align="right" src="https://github.com/user-attachments/assets/debeb11a-6764-4e4b-a61f-395ac04de902" />
 
 O **NDI - Network Device Interface** é um protocolo de vídeo sobre IP desenvolvido pela NewTek, projetado para transmitir vídeo e áudio de alta qualidade através de redes Ethernet em tempo real. Diferente dos métodos tradicionais de transmissão, que dependem de cabos SDI ou HDMI, o NDI elimina grande parte da limitação física ao transformar a rede local em uma infraestrutura capaz de transportar múltiplos fluxos de vídeo e áudio simultaneamente, com baixa latência e sem compressão perceptível. 
 
 Em outras palavras, ele transforma qualquer dispositivo conectado à rede como câmeras, computadores, switchers e softwares de produção em fontes e destinos de vídeo interconectados, tudo via IP, sem necessidade de hardware dedicado para cada conexão.
+
+**NDI** é frequentemente a ligação:
+
+```
+NDI = Vídeo + Áudio + Metadata encapsulados em fluxos UDP multicast
+```
 
 <img height="589" src="https://github.com/user-attachments/assets/1ddc3e18-006d-4212-ad9a-19cc55089595" />
 
