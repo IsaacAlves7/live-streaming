@@ -171,7 +171,6 @@ Poucos B-frames ou nenhum
     <td>Encoding</td>
     <td>Transcoding</td>
   </tr>
-<table>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/53f34a79-dad8-4ba6-a144-ebc0adff952a"></td>
     <td><img src="https://github.com/user-attachments/assets/58cda0d9-4102-4e6f-b82d-92a00bcdd502"></td>
