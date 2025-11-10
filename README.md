@@ -65,6 +65,8 @@ Como funcionam as transmissões ao vivo de vídeo no YouTube, TikTok ou Twitch? 
 
 7. Etapas 7 e 8: Para permitir a reprodução, os vídeos podem ser armazenados opcionalmente em um dispositivo de armazenamento como o Amazon S3. Etapas 7 e 8: Se o vídeo precisar ser armazenado para reprodução posterior, os dados codificados são enviados para um servidor de armazenamento, e os espectadores podem solicitar a reprodução posteriormente.
 
+Toda transmissão ao vivo pro YouTube Live possui um endereço RTMP e uma chave para se conectar com o broadcast, no caso, pro OBS Studio se conectar com ele, você precisa copiar e colar essa chave dentro do OBS, como se fosse uma ponte.
+
 <img width="1611" height="670" alt="image" src="https://github.com/user-attachments/assets/d0547485-e602-49bb-a3d9-4cad359c48c3" />
 
 Os protocolos padrão para streaming ao vivo incluem:
