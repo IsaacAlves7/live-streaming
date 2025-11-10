@@ -51,6 +51,8 @@ Etapas da Transmissão ao Vivo: O diagrama acima explica o que acontece nos bast
 
 Como funcionam as transmissões ao vivo de vídeo no YouTube, TikTok ou Twitch? A técnica é chamada de transmissão ao vivo (live streaming). A transmissão ao vivo difere da transmissão regular porque o conteúdo de vídeo é enviado pela internet em tempo real, geralmente com uma latência de apenas alguns segundos:
 
+<img src="https://github.com/user-attachments/assets/5075b53e-1375-4add-b9c7-8681246c65dd" align="right" height="177">
+
 1. Etapa 1: O streamer inicia sua transmissão. A fonte pode ser qualquer fonte de vídeo e áudio conectada a um codificador. Etapa 1: Os dados brutos do vídeo são capturados por um microfone e uma câmera. Os dados são enviados para o servidor.
 
 2. Etapa 2: Para fornecer as melhores condições de upload para o streamer, a maioria das plataformas de transmissão ao vivo oferece servidores de ponto de presença em todo o mundo. O streamer se conecta a um servidor de ponto de presença mais próximo. Etapa 2: Os dados do vídeo são comprimidos e codificados. Por exemplo, o algoritmo de compressão separa o fundo e outros elementos do vídeo. Após a compressão, o vídeo é codificado em padrões como o H.264. O tamanho dos dados do vídeo é muito menor após esta etapa.
