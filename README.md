@@ -89,9 +89,13 @@ Compreender esses componentes, sua interação e seu impacto no processo de tran
 
 ![1702466507032](https://github.com/user-attachments/assets/342dfc20-b9e9-4eb4-ae34-6a8bc23b041e)
 
-![265c87a1-2bce-445e-bbd2-535a4fad65ca __CR0,0,1464,600_PT0_SX1464_V1___](https://github.com/user-attachments/assets/8b911511-3034-4666-8e49-5fa1e5cb5220)
+![265c87a1-2bce-445e-bbd2-535a4fad65ca CR0,0,1464,600_PT0_SX1464_V1](https://github.com/user-attachments/assets/8b911511-3034-4666-8e49-5fa1e5cb5220)
 
 ![maxresdefault](https://github.com/user-attachments/assets/01f41411-9123-48a6-935f-2b975369d068)
+
+<img width="850" height="571" alt="The-architecture-of-a-live-streaming-system-working-with-an-anchor-voiceprint-recognition" src="https://github.com/user-attachments/assets/726bb956-034e-4b77-a823-5f0ff3734ab1" />
+
+![How-do-video-streaming-work-1024x687](https://github.com/user-attachments/assets/0cd9c2ab-44bf-4cdd-a96e-08b85a9a4080)
 
 ## [Live] Live Streaming - Online realtime
 <a href="https://www.youtube.com/watch?v=14K_a2kKTxU"><img src="https://img.shields.io/badge/Python-API_Pagination-red?style=flat&logo=Python&logoColor=white"></a> <a href="https://github.com/IsaacAlves7/devsecops/blob/master/pages/cn.md"><img src="https://img.shields.io/badge/CN-LIVE-red?style=flat&logo=GitHub&logoColor=white"></a> <a href="https://github.com/IsaacAlves7/devsecops/blob/master/pages/cn.md"><img src="https://img.shields.io/badge/CN-LIVE-red?style=flat&logo=GitHub&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/Tensorflow-LIVE-red?style=flat&logo=Tensorflow&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/OpenAI-LIVE-red?style=flat&logo=OpenAI&logoColor=white"></a> <a href="https://youtu.be/qXJ3S3T3xJY"><img src="https://img.shields.io/badge/GCP-LIVE-red?style=flat&logo=googlecloud&logoColor=white"></a> <a href="https://notebooklm.google/"><img src="https://img.shields.io/badge/Excalidraw-LIVE-red?style=flat&logo=Excalidraw&logoColor=white"></a>
