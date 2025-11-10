@@ -33,6 +33,13 @@ Portanto há sempre um fluxo: **OBS Studio → ProPresenter → Telões** se con
 
 O **ProPresenter** é a escolha definitiva em software de produção e apresentação ao vivo. Leve seus eventos para o próximo nível com os recursos intuitivos e visuais impressionantes do ProPresenter.
 
+Para baixar imagens ou vídeos pra transições:
+
+- Pexels
+- Pixelbay
+- Pinterest
+- Canva
+
 Etapas da Transmissão ao Vivo: O diagrama acima explica o que acontece nos bastidores para tornar isso possível.
 
 <table>
