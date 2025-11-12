@@ -371,6 +371,158 @@ A figura abaixo mostra a arquitetura do serviço de streaming de vídeo adaptati
   </tr>
 </table>
 
+Um *mini-projeto pronto* que transforma uma página estática em um player que reproduz uma transmissão ao vivo. A arquitetura é simples e robusta: um **publisher** (OBS ou ffmpeg) envia RTMP para um servidor NGINX com módulo RTMP que converte para HLS (segmentos `.ts` + `m3u8`), o servidor serve os arquivos HLS por HTTP, e o player em HTML/JS (usando `hls.js`) consome o `playlist.m3u8`. Isso é a solução mais prática para live streaming com latência moderada (1–6s), fácil de rodar localmente via Docker Compose e fácil de escalar depois com CDN/edge. Abaixo eu coloco tudo que você precisa: `docker-compose.yml`, `nginx.conf` (RTMP → HLS), o comando `ffmpeg` (ou instrução para OBS) para enviar a stream, e a página HTML com `hls.js`. Siga as instruções de execução no final — tudo bate na mesma máquina por padrão (localhost).
+
+`docker-compose.yml` (cria um container com nginx-rtmp e monta a configuração e a pasta `hls` onde os segmentos serão gerados):
+
+```yaml
+version: "3.8"
+services:
+  nginx-rtmp:
+    image: alfg/nginx-rtmp:latest
+    container_name: nginx-rtmp
+    ports:
+      - "1935:1935"   # RTMP ingest
+      - "8080:80"     # HTTP server for HLS
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./hls:/tmp/hls
+    restart: unless-stopped
+```
+
+`nginx.conf` (configuração mínima que habilita RTMP ingest e HLS packaging; também abre CORS para que o player no browser consiga buscar os segmentos):
+
+```nginx
+worker_processes  1;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    sendfile off;
+    tcp_nopush on;
+    aio off;
+    directio 512;
+    default_type application/octet-stream;
+
+    server {
+        listen 80;
+        server_name _;
+
+        # Serve HLS segments
+        location /hls {
+            types {
+                application/vnd.apple.mpegurl m3u8;
+                video/mp2t ts;
+            }
+            root /tmp;
+            add_header Cache-Control no-cache;
+            add_header Access-Control-Allow-Origin *;
+            add_header Access-Control-Allow-Headers *;
+        }
+
+        # Simple index (optional)
+        location / {
+            return 200 "NGINX-RTMP HLS server\n";
+        }
+    }
+}
+
+rtmp {
+    server {
+        listen 1935;
+        chunk_size 4096;
+
+        application live {
+            live on;
+            record off;
+
+            # HLS settings
+            hls on;
+            hls_path /tmp/hls;
+            hls_fragment 3s;
+            hls_playlist_length 6s;
+            # allow playback from browsers
+            # disable on_error to avoid disconnects
+        }
+    }
+}
+```
+
+Página `player.html` (simples player HTML que usa `hls.js` para reproduzir o `m3u8` gerado pelo NGINX):
+
+```html
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Live Player - HLS</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; background:#111; color:#fff; display:flex; align-items:center; justify-content:center; height:100vh; margin:0; }
+    .player { width: 80%; max-width: 960px; }
+    video { width:100%; height:auto; background:#000; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <div class="player">
+    <video id="video" controls playsinline></video>
+    <p id="status">Aguardando stream...</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script>
+    const video = document.getElementById('video');
+    const status = document.getElementById('status');
+
+    // URL do playlist gerado pelo nginx: exemplo http://localhost:8080/hls/stream.m3u8
+    const playlist = 'http://localhost:8080/hls/stream.m3u8';
+
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(playlist);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        status.textContent = 'Manifest carregado — reproduzindo...';
+        video.play().catch(()=>{ /* autoplay bloqueado sem interação */ });
+      });
+      hls.on(Hls.Events.ERROR, function(event, data) {
+        console.error('HLS error', event, data);
+        status.textContent = 'Erro HLS: ' + data.type + ' / ' + data.details;
+      });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      // safari nativo
+      video.src = playlist;
+      video.addEventListener('loadedmetadata', () => video.play());
+      status.textContent = 'Safari (nativo) — reproduzindo...';
+    } else {
+      status.textContent = 'Navegador não suporta HLS nativamente';
+    }
+  </script>
+</body>
+</html>
+```
+
+Comando `ffmpeg` para enviar um arquivo local (ou webcam) para o servidor RTMP (`stream` é a *stream key*), usando codificação compatível com HLS:
+
+```bash
+# enviar arquivo mp4 como live (loop) - exemplo
+ffmpeg -re -stream_loop -1 -i sample.mp4 \
+  -c:v libx264 -preset veryfast -b:v 2000k -maxrate 2000k -bufsize 4000k \
+  -g 50 -c:a aac -b:a 128k -ar 44100 \
+  -f flv rtmp://localhost:1935/live/stream
+```
+
+Ou, se preferir usar o OBS, configure como `Custom` streaming server: `rtmp://<SEU_SERVIDOR>:1935/live` com *Stream Key* `stream`. No OBS escolha encoder x264 ou hardware, bitrate compatível (ex.: 2000 kbps) e resolução/gop adequados.
+
+Como executar localmente: crie uma pasta do projeto, grave `docker-compose.yml`, `nginx.conf` e `player.html`, crie a pasta `hls` vazia e rode `docker compose up -d`. Verifique logs do container `docker compose logs -f nginx-rtmp`. Depois, dispare o `ffmpeg` (ou inicie o OBS) para fazer publish para `rtmp://localhost:1935/live/stream`. Abra `player.html` no seu navegador (ou sirva por HTTP simples), ou acesse `http://localhost:8080/hls/stream.m3u8` no VLC para testar. O player deve começar a reproduzir com latência baixa.
+
+Notas práticas e recomendações de produção: em ambiente real substitua Docker Compose por Kubernetes (Deployment + Service), use storage persistente para `hls` se quiser origin persistente, proteja endpoints RTMP (tokenize, firewall IP), exponha HLS via HTTPS com um server NGINX/Traefik com certificados, e use CDN (CloudFront, Fastly, BunnyCDN) na frente dos segmentos `.ts` para escalabilidade. Se latência ultra baixa for necessária (<1s), escolha WebRTC (mais complexo) ou SRT/RTMP-to-WebRTC gateways; HLS é simples e compatível mas tem latência maior. Garanta CORS correto no `nginx.conf` para o player web e monitore disco/IO: HLS produz muitos pequenos arquivos.
+
+Se quiser, eu gero um `docker-compose` com uma app Node.js estática servindo o `player.html` via `express.static`, adiciono um script `start-stream.sh` com o comando `ffmpeg` de exemplo e incluo instruções para HTTPS local via `mkcert` — posso também adaptar a configuração para usar NGINX/RTMP custom build se você quiser features extras (DVR, HLS encryption, HLS low-latency). 
+
+Versão completa (com Node + HTTPS + script de publish)
+
 ## [Live] Como o Facebook Live chegou a um bilhão de usuários
 <img height="77" align="right" src="https://github.com/user-attachments/assets/4d81a043-a824-4d5d-8f02-32ae53d60cc1" />
 
