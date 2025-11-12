@@ -196,6 +196,18 @@ Poucos B-frames ou nenhum
   </tr>
 </table>
 
+**Encoding** e **transcoding** são dois processos centrais e absolutamente vitais dentro de toda arquitetura de Live Streaming, pois definem a forma como o vídeo é processado, convertido e entregue para reprodução em diferentes dispositivos e condições de rede. Embora os dois termos pareçam semelhantes, eles têm diferenças técnicas importantes, especialmente no fluxo entre captura, compressão e redistribuição do sinal de vídeo em tempo real.
+
+_Encoding_ (ou codificação) é o primeiro estágio do processamento de vídeo. Quando uma câmera captura o vídeo, ela gera um sinal bruto, geralmente em formato não comprimido, com altas taxas de bits e padrões que são inviáveis de transmitir diretamente pela internet, como YUV sem compressão. O encoder que pode ser um software (como OBS Studio, Wirecast, vMix) ou um hardware dedicado (como Blackmagic ATEM ou Teradek) converte esse sinal bruto em um formato digital comprimido, normalmente em **H.264 (AVC)** ou **H.265 (HEVC)**, encapsulado em contêineres como **MP4**, **FLV** ou **MPEG-TS**. Além da compressão, o encoder define o bitrate, a resolução, a taxa de quadros e o protocolo de envio (como RTMP, SRT, HLS ou WebRTC). Assim, o encoding é o processo que transforma um sinal de vídeo cru em um fluxo codificado, eficiente e pronto para transmissão ao vivo pela rede.
+
+O _transcoding_ (ou transcodificação) ocorre em uma fase posterior, geralmente no servidor ou na nuvem (como AWS MediaLive, Wowza Streaming Engine, ou Mux). Ele pega o vídeo já codificado e o **reprocessa em múltiplas versões diferentes**, ajustando parâmetros como resolução, bitrate e codec. O objetivo é permitir **Adaptive Bitrate Streaming (ABR)** isto é, a capacidade do player do usuário escolher automaticamente a melhor qualidade de vídeo conforme a velocidade da conexão de internet. Por exemplo, um vídeo originalmente transmitido em 1080p a 5 Mbps pode ser transcodificado para versões 720p, 480p e 360p, garantindo reprodução fluida mesmo em conexões lentas.
+
+Tecnicamente, o transcoding envolve decodificar o fluxo de entrada, aplicar novas compressões e reencodar os quadros de acordo com os perfis de saída desejados. Em alguns casos, há também o **transmuxing**, que é uma etapa mais leve onde o vídeo não é recomprimido, apenas reempacotado em outro contêiner ou protocolo (por exemplo, converter RTMP para HLS sem recodificar os frames).
+
+Em pipelines de Live Streaming profissionais, o fluxo segue mais ou menos assim: **captura → encoding → ingest → transcoding → packaging → distribuição via CDN → playback**. O encoding garante eficiência na origem, enquanto o transcoding assegura versatilidade e acessibilidade na entrega.
+
+Portanto, o encoding é o ato de comprimir e preparar o vídeo para transmissão, e o transcoding é o processo de converter esse vídeo codificado em múltiplas versões compatíveis com diferentes condições e dispositivos. Sem encoding, a transmissão seria inviável em termos de largura de banda; sem transcoding, a experiência do usuário seria desigual e restrita a apenas uma qualidade. Esses dois processos juntos são a espinha dorsal da engenharia de vídeo moderna e tornam o Live Streaming realmente escalável e inclusivo.
+
 **3. Transporte (Protocol Layer)**: Aqui está o coração da transmissão ao vivo.
 
 | Protocolo     | Finalidade                          | Latência    | Observações                            |
