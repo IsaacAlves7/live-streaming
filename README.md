@@ -180,6 +180,8 @@ GOP de 1 a 2 segundos
 Poucos B-frames ou nenhum
 ```
 
+**Encoding** e **transcoding** são dois processos centrais e absolutamente vitais dentro de toda arquitetura de Live Streaming, pois definem a forma como o vídeo é processado, convertido e entregue para reprodução em diferentes dispositivos e condições de rede. Embora os dois termos pareçam semelhantes, eles têm diferenças técnicas importantes, especialmente no fluxo entre captura, compressão e redistribuição do sinal de vídeo em tempo real.
+
 <table>
   <tr>
     <td>Encoding</td>
@@ -190,8 +192,6 @@ Poucos B-frames ou nenhum
     <td><img src="https://github.com/user-attachments/assets/58cda0d9-4102-4e6f-b82d-92a00bcdd502"></td>
   </tr>
 </table>
-
-**Encoding** e **transcoding** são dois processos centrais e absolutamente vitais dentro de toda arquitetura de Live Streaming, pois definem a forma como o vídeo é processado, convertido e entregue para reprodução em diferentes dispositivos e condições de rede. Embora os dois termos pareçam semelhantes, eles têm diferenças técnicas importantes, especialmente no fluxo entre captura, compressão e redistribuição do sinal de vídeo em tempo real.
 
 _Encoding_ (ou codificação) é o primeiro estágio do processamento de vídeo. Quando uma câmera captura o vídeo, ela gera um sinal bruto, geralmente em formato não comprimido, com altas taxas de bits e padrões que são inviáveis de transmitir diretamente pela internet, como YUV sem compressão. O encoder que pode ser um software (como OBS Studio, Wirecast, vMix) ou um hardware dedicado (como Blackmagic ATEM ou Teradek) converte esse sinal bruto em um formato digital comprimido, normalmente em **H.264 (AVC)** ou **H.265 (HEVC)**, encapsulado em contêineres como **MP4**, **FLV** ou **MPEG-TS**. Além da compressão, o encoder define o bitrate, a resolução, a taxa de quadros e o protocolo de envio (como RTMP, SRT, HLS ou WebRTC). Assim, o encoding é o processo que transforma um sinal de vídeo cru em um fluxo codificado, eficiente e pronto para transmissão ao vivo pela rede.
 
