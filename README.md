@@ -206,7 +206,13 @@ O _transcoding_ (ou transcodificação) ocorre em uma fase posterior, geralmente
 
 Tecnicamente, o transcoding envolve decodificar o fluxo de entrada, aplicar novas compressões e reencodar os quadros de acordo com os perfis de saída desejados. Em alguns casos, há também o **transmuxing**, que é uma etapa mais leve onde o vídeo não é recomprimido, apenas reempacotado em outro contêiner ou protocolo (por exemplo, converter RTMP para HLS sem recodificar os frames).
 
-Em pipelines de Live Streaming profissionais, o fluxo segue mais ou menos assim: **captura → encoding → ingest → transcoding → packaging → distribuição via CDN → playback**. O encoding garante eficiência na origem, enquanto o transcoding assegura versatilidade e acessibilidade na entrega.
+Em pipelines de Live Streaming profissionais, o fluxo segue mais ou menos assim: 
+
+```
+captura → encoding → ingest → transcoding → packaging → distribuição via CDN → playback
+```
+
+O encoding garante eficiência na origem, enquanto o transcoding assegura versatilidade e acessibilidade na entrega.
 
 Portanto, o encoding é o ato de comprimir e preparar o vídeo para transmissão, e o transcoding é o processo de converter esse vídeo codificado em múltiplas versões compatíveis com diferentes condições e dispositivos. Sem encoding, a transmissão seria inviável em termos de largura de banda; sem transcoding, a experiência do usuário seria desigual e restrita a apenas uma qualidade. Esses dois processos juntos são a espinha dorsal da engenharia de vídeo moderna e tornam o Live Streaming realmente escalável e inclusivo.
 
