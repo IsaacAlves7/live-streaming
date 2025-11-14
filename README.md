@@ -781,7 +781,9 @@ No entanto, o sinal que chega à sua TV por antena, cabo ou satélite ainda é o
 
 <img src="https://github.com/user-attachments/assets/84b0ceb8-0d7d-4320-8fcd-0bf96e1040b8" align="right" height="77">
 
-O **OBS Studio**, que é a sigla para Open Broadcaster Software Studio, representa a ferramenta definitiva quando o assunto é captura e transmissão de conteúdo audiovisual de forma gratuita e profissional. Ele se consolidou como o software padrão-ouro para uma gama impressionante de usuários, desde streamers iniciantes transmitindo suas jogatinas até grandes produtores de conteúdo e até mesmo empresas realizando webinars corporativos. A sua natureza de código aberto é um pilar fundamental, significando que uma comunidade global de desenvolvedores contribui constantemente para o seu aprimoramento, garantindo atualizações frequentes, novas funcionalidades e uma estabilidade robusta.
+O **OBS Studio**, que é a sigla para Open Broadcaster Software Studio, representa a ferramenta definitiva quando o assunto é captura e transmissão de conteúdo audiovisual de forma gratuita e profissional. Ele se consolidou como o software padrão-ouro para uma gama impressionante de usuários, desde streamers iniciantes transmitindo suas jogatinas até grandes produtores de conteúdo e até mesmo empresas realizando webinars corporativos. 
+
+A sua natureza de código aberto é um pilar fundamental, significando que uma comunidade global de desenvolvedores contribui constantemente para o seu aprimoramento, garantindo atualizações frequentes, novas funcionalidades e uma estabilidade robusta.
 
 A operação central do OBS gira em torno de um conceito poderoso e intuitivo: o sistema de Cenas e Fontes. Imagine o OBS como um estúdio de televisão virtual na sua tela. Uma Cena é como um cenário ou um layout específico. Você pode criar várias cenas para diferentes momentos da sua transmissão ou gravação, por exemplo, uma cena para o jogo em tela cheia, outra para um "brb" (volto logo) com uma tela estática e música, e outra para o encerramento. 
 
