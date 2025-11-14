@@ -803,7 +803,7 @@ Em essência, o OBS Studio democratizou a produção audiovisual de alta qualida
 
 As **legendas** são conexões via API, no caso do Holyrics são plugins que o mesmo disponibiliza, uma é para os hinos da harpa ou letra de louvores, divididos em parágrafos de dois ou três estrofes, e no outro de Bíblia Sagrada contendo os capítulos e versículos, o processo de seleção é feito manualmente.
 
-Vá em propriedades e cole um dos endereços IP com as portas, nos seguintes endpoints:
+Vá em `propriedades` e cole um dos endereços IP com as portas, nos seguintes endpoints:
 
 - Letra: /view/text
 - Bíblia Sagrada: /view/text2
