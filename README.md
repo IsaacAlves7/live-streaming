@@ -109,6 +109,7 @@ Compreender esses componentes, sua interação e seu impacto no processo de tran
 
 ![live-streaming-with-PTZOptics](https://github.com/user-attachments/assets/f53480df-2e18-448e-b9be-7c179dfffc01)
 
+<img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/2b6d2a44-03c4-4a44-8cd7-d0ca297a5398" />
 
 ## [Live] Live Streaming - Online realtime
 <a href="https://www.youtube.com/watch?v=14K_a2kKTxU"><img src="https://img.shields.io/badge/Python-API_Pagination-red?style=flat&logo=Python&logoColor=white"></a> <a href="https://github.com/IsaacAlves7/devsecops/blob/master/pages/cn.md"><img src="https://img.shields.io/badge/CN-LIVE-red?style=flat&logo=GitHub&logoColor=white"></a> <a href="https://github.com/IsaacAlves7/devsecops/blob/master/pages/cn.md"><img src="https://img.shields.io/badge/CN-LIVE-red?style=flat&logo=GitHub&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/Tensorflow-LIVE-red?style=flat&logo=Tensorflow&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/OpenAI-LIVE-red?style=flat&logo=OpenAI&logoColor=white"></a> <a href="https://youtu.be/qXJ3S3T3xJY"><img src="https://img.shields.io/badge/GCP-LIVE-red?style=flat&logo=googlecloud&logoColor=white"></a> <a href="https://notebooklm.google/"><img src="https://img.shields.io/badge/Excalidraw-LIVE-red?style=flat&logo=Excalidraw&logoColor=white"></a>
