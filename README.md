@@ -29,7 +29,7 @@ E quando você pensa no streaming massivo, como YouTube, Twitch ou lives em igre
 
 Ou seja, por trás de algo simples como “assistir uma live”, existe um conjunto de decisões arquiteturais, matemáticas e científicas extremamente complexas. Streaming é, no fundo, **engenharia de tempo real aplicada à comunicação digital**, lidando com a fluidez do tempo, instabilidades da rede e fragilidade da informação.
 
-Portanto há sempre um fluxo: **OBS Studio → ProPresenter → Telões** se conectam na prática, incluindo NDI, sincronização, pacotes multicast e ajustes de jitter.
+Portanto há sempre um fluxo: `OBS Studio → ProPresenter → Telões` se conectam na prática, incluindo NDI, sincronização, pacotes multicast e ajustes de jitter.
 
 O **ProPresenter** é a escolha definitiva em software de produção e apresentação ao vivo. Leve seus eventos para o próximo nível com os recursos intuitivos e visuais impressionantes do ProPresenter.
 
@@ -37,8 +37,7 @@ Os atalhos e dicas mais importantes do ProPresenter são:
 
 - Selecionar com o cursor do mouse o capítulo da Bíblia Sagrada e selecionar com as arrows ou espaço;
 - `F2` para ocultar as legendas
-
-Para baixar imagens ou vídeos pra transições: Pexels, Pixelbay, Pinterest, Canva, etc.
+- Para baixar imagens ou vídeos pra transições: Pexels, Pixelbay, Pinterest, Canva, etc.
 
 Etapas da Transmissão ao Vivo: O diagrama acima explica o que acontece nos bastidores para tornar isso possível.
 
