@@ -27,7 +27,7 @@ E quando você pensa no streaming massivo, como YouTube, Twitch ou lives em igre
 
 <a href="https://renewedvision.com/propresenter"><img height="77" align="right" src="https://github.com/user-attachments/assets/c6a9f3d6-87c1-429d-b380-0e490ade7374" /></a>
 
-Ou seja, por trás de algo simples como “assistir uma live”, existe um conjunto de decisões arquiteturais, matemáticas e científicas extremamente complexas. Streaming é, no fundo, **engenharia de tempo real aplicada à comunicação digital**, lidando com a fluidez do tempo, instabilidades da rede e fragilidade da informação.
+Ou seja, por trás de algo simples como “assistir uma live”, existe um conjunto de decisões arquiteturais, matemáticas e científicas extremamente complexas. Streaming é, no fundo, *engenharia de tempo real aplicada à comunicação digital*, lidando com a fluidez do tempo, instabilidades da rede e fragilidade da informação.
 
 Portanto há sempre um fluxo: `OBS Studio → ProPresenter → Telões` se conectam na prática, incluindo NDI, sincronização, pacotes multicast e ajustes de jitter.
 
