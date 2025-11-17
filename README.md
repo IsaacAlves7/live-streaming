@@ -794,7 +794,10 @@ A operação central do OBS gira em torno de um conceito poderoso e intuitivo: o
 
 Dentro de cada cena, você organiza as Fontes, que são os elementos visuais e sonoros que a compõem. A flexibilidade aqui é extraordinária: você pode adicionar como fonte a captura de uma janela específica de jogo, a sua tela inteira, uma webcam, imagens estáticas (como logos e sobreposições), textos dinâmicos, listas de navegador web, dispositivos de áudio e muito mais. Cada fonte pode ser reposicionada, redimensionada e organizada em camadas, permitindo um controle criativo total sobre o que o seu público vê e ouve.
 
-`Ctrl + x` pra fazer a transição, pra fazer ocultação de legenda `F9`.
+Atalhos e dicas essenciais do OBS Studio:
+
+- `Ctrl + x` pra fazer a transição
+- Pra fazer ocultação de legenda `F9`
 
 Para quem transmite ao vivo, o OBS é uma central de controle completa. Ele permite configurar de forma nativa ou via plugins as principais plataformas de streaming, como Twitch, YouTube, Facebook Live e muitas outras. Basta obter a chave de transmissão do serviço escolhido e configurá-la no software. A partir daí, você tem controle total sobre a qualidade do seu stream, podendo ajustar a taxa de bits, a resolução e a taxa de quadros para encontrar o equilíbrio perfeito entre qualidade visual e estabilidade da conexão. O recurso de Estúdio de Gravação é vital para o profissionalismo, permitindo que você visualize e ajuste a próxima cena antes de torná-la ativa para o público, tudo sem interromper a transmissão principal.
 
