@@ -232,7 +232,7 @@ Portanto, o encoding é o ato de comprimir e preparar o vídeo para transmissão
 | **MPEG-DASH** | Delivery adaptativo                 | Alta        | Similar ao HLS, independente da Apple  |
 | **NDI**       | Rede local sem compressão agressiva | Muito baixa | Ideal para switcher, ProPresenter, OBS |
 
-No seu caso (OBS → ProPresenter).
+No seu caso (OBS → ProPresenter): O NDI pra telão de show, funciona como um protocolo de vídeo sobre rede que trata cada fonte de vídeo como um fluxo ao vivo, transmitido em altíssima qualidade, com baixa latência e sem necessidade de placa de captura física. Pense nele como um “HDMI via Ethernet”, só que muito mais inteligente, flexível e integrado ao software moderno. Ele envia vídeo, áudio, metadados e controle de frames através da rede local usando compressão sem perdas perceptíveis, mantendo a imagem estável mesmo em conexões IP com dezenas de metros de cabo.
 
 <img height="77" align="right" src="https://github.com/user-attachments/assets/debeb11a-6764-4e4b-a61f-395ac04de902" />
 
