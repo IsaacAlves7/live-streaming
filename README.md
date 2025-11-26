@@ -252,11 +252,11 @@ A importância do NDI no live streaming é profunda, pois ele representa a conve
 
 Outro ponto essencial do NDI é a sua baixa latência e a sincronia precisa entre áudio e vídeo, o que é crucial em transmissões ao vivo. Ele utiliza compressão eficiente baseada em codecs como o SpeedHQ, otimizando a largura de banda sem sacrificar a qualidade. Além disso, o protocolo oferece suporte a metadados, controle remoto de câmeras PTZ, e até mesmo comunicação bidirecional entre dispositivos, permitindo que um switcher envie comandos para a câmera ou receba feedback em tempo real. Isso cria um fluxo de trabalho integrado, no qual todos os dispositivos “conversam” entre si dentro da rede, sem precisar de hardware adicional.
 
-<img src="https://github.com/user-attachments/assets/379d53a6-5008-4658-840f-50cecc5ac2bf" align="right" height="77">
-
 No contexto atual, em que o streaming se tornou o padrão de comunicação — seja em eventos corporativos, esportes, igrejas ou produções independentes — o NDI tem um papel transformador. Ele democratiza o acesso à produção audiovisual de qualidade, reduz drasticamente os custos e simplifica a complexidade técnica. Além disso, sua compatibilidade com soluções na nuvem e integração com softwares de virtualização o tornam peça fundamental em pipelines híbridos, onde parte da produção ocorre localmente e parte na internet.
 
 Em suma, o NDI é mais do que um protocolo; é uma arquitetura de conectividade audiovisual moderna, que redefine o conceito de produção ao vivo. Ele representa o futuro da transmissão de vídeo profissional, ao integrar flexibilidade, qualidade e eficiência, permitindo que qualquer rede IP se torne um estúdio de broadcast dinâmico, interligado e de alta performance.
+
+<img src="https://github.com/user-attachments/assets/379d53a6-5008-4658-840f-50cecc5ac2bf" align="right" height="77">
 
 O funcionamento prático do NDI é quase sempre o mesmo: um software atua como emissor (no seu caso, o OBS), e outro atua como receptor (o ProPresenter). Quando o OBS ativa a saída NDI, ele publica um fluxo na rede como se dissesse: “aqui está minha câmera virtual, disponível para quem quiser puxar”. O ProPresenter, ao procurar fontes NDI, detecta automaticamente esse fluxo como se fosse uma câmera ou um sinal de vídeo profissional, e passa a receber o vídeo em tempo real. Tudo isso sem placas SDI, sem HDMI, sem conversores, apenas Ethernet — desde que a rede seja Gigabit, estável e, idealmente, dedicada para vídeo.
 
