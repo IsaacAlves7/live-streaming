@@ -99,14 +99,13 @@ Compreender esses componentes, sua interação e seu impacto no processo de tran
 
 ![1702466507032](https://github.com/user-attachments/assets/342dfc20-b9e9-4eb4-ae34-6a8bc23b041e)
 
-![265c87a1-2bce-445e-bbd2-535a4fad65ca CR0,0,1464,600_PT0_SX1464_V1](https://github.com/user-attachments/assets/8b911511-3034-4666-8e49-5fa1e5cb5220)
-
-![maxresdefault](https://github.com/user-attachments/assets/01f41411-9123-48a6-935f-2b975369d068)
-
-<img width="850" height="571" alt="The-architecture-of-a-live-streaming-system-working-with-an-anchor-voiceprint-recognition" src="https://github.com/user-attachments/assets/726bb956-034e-4b77-a823-5f0ff3734ab1" />
-
 <table>
   <tr>
+    <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/8b911511-3034-4666-8e49-5fa1e5cb5220" /></td>
+    <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/8b911511-3034-4666-8e49-5fa1e5cb5220" /></td>
+    <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/01f41411-9123-48a6-935f-2b975369d068" /></td>
+    <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/01f41411-9123-48a6-935f-2b975369d068" /></td>
+    <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/726bb956-034e-4b77-a823-5f0ff3734ab1" /></td>
     <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/0cd9c2ab-44bf-4cdd-a96e-08b85a9a4080" /></td>
     <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/2b6d2a44-03c4-4a44-8cd7-d0ca297a5398" /></td>
     <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/f53480df-2e18-448e-b9be-7c179dfffc01" /></td>
