@@ -107,13 +107,12 @@ Compreender esses componentes, sua interação e seu impacto no processo de tran
 
 ![How-do-video-streaming-work-1024x687](https://github.com/user-attachments/assets/0cd9c2ab-44bf-4cdd-a96e-08b85a9a4080)
 
-![livestreamchurch_9eac0816-25b5-4647-aede-26b9f27f2d9c_1024x1024](https://github.com/user-attachments/assets/d438eace-74bd-4f8d-826c-2c508451513c)
-
 <table>
   <tr>
     <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/2b6d2a44-03c4-4a44-8cd7-d0ca297a5398" /></td>
     <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/f53480df-2e18-448e-b9be-7c179dfffc01" /></td>
     <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/1f998f54-8b72-48e2-ab40-ecde3dcd4528" /></td>
+    <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/d438eace-74bd-4f8d-826c-2c508451513c" /></td>
   </tr>
 </table>
 
