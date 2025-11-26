@@ -105,10 +105,9 @@ Compreender esses componentes, sua interação e seu impacto no processo de tran
 
 <img width="850" height="571" alt="The-architecture-of-a-live-streaming-system-working-with-an-anchor-voiceprint-recognition" src="https://github.com/user-attachments/assets/726bb956-034e-4b77-a823-5f0ff3734ab1" />
 
-![How-do-video-streaming-work-1024x687](https://github.com/user-attachments/assets/0cd9c2ab-44bf-4cdd-a96e-08b85a9a4080)
-
 <table>
   <tr>
+    <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/0cd9c2ab-44bf-4cdd-a96e-08b85a9a4080" /></td>
     <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/2b6d2a44-03c4-4a44-8cd7-d0ca297a5398" /></td>
     <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/f53480df-2e18-448e-b9be-7c179dfffc01" /></td>
     <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/1f998f54-8b72-48e2-ab40-ecde3dcd4528" /></td>
