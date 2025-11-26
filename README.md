@@ -252,6 +252,8 @@ A importância do NDI no live streaming é profunda, pois ele representa a conve
 
 Outro ponto essencial do NDI é a sua baixa latência e a sincronia precisa entre áudio e vídeo, o que é crucial em transmissões ao vivo. Ele utiliza compressão eficiente baseada em codecs como o SpeedHQ, otimizando a largura de banda sem sacrificar a qualidade. Além disso, o protocolo oferece suporte a metadados, controle remoto de câmeras PTZ, e até mesmo comunicação bidirecional entre dispositivos, permitindo que um switcher envie comandos para a câmera ou receba feedback em tempo real. Isso cria um fluxo de trabalho integrado, no qual todos os dispositivos “conversam” entre si dentro da rede, sem precisar de hardware adicional.
 
+<img src="https://github.com/user-attachments/assets/379d53a6-5008-4658-840f-50cecc5ac2bf" align="right" height="77">
+
 No contexto atual, em que o streaming se tornou o padrão de comunicação — seja em eventos corporativos, esportes, igrejas ou produções independentes — o NDI tem um papel transformador. Ele democratiza o acesso à produção audiovisual de qualidade, reduz drasticamente os custos e simplifica a complexidade técnica. Além disso, sua compatibilidade com soluções na nuvem e integração com softwares de virtualização o tornam peça fundamental em pipelines híbridos, onde parte da produção ocorre localmente e parte na internet.
 
 Em suma, o NDI é mais do que um protocolo; é uma arquitetura de conectividade audiovisual moderna, que redefine o conceito de produção ao vivo. Ele representa o futuro da transmissão de vídeo profissional, ao integrar flexibilidade, qualidade e eficiência, permitindo que qualquer rede IP se torne um estúdio de broadcast dinâmico, interligado e de alta performance.
