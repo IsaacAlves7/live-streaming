@@ -109,11 +109,13 @@ Compreender esses componentes, sua interação e seu impacto no processo de tran
 
 ![livestreamchurch_9eac0816-25b5-4647-aede-26b9f27f2d9c_1024x1024](https://github.com/user-attachments/assets/d438eace-74bd-4f8d-826c-2c508451513c)
 
-![V86TS210831nx1Dq](https://github.com/user-attachments/assets/1f998f54-8b72-48e2-ab40-ecde3dcd4528)
-
-![live-streaming-with-PTZOptics](https://github.com/user-attachments/assets/f53480df-2e18-448e-b9be-7c179dfffc01)
-
-<img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/2b6d2a44-03c4-4a44-8cd7-d0ca297a5398" />
+<table>
+  <tr>
+    <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/2b6d2a44-03c4-4a44-8cd7-d0ca297a5398" /></td>
+    <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/f53480df-2e18-448e-b9be-7c179dfffc01" /></td>
+    <td><img width="770" height="271" alt="recommende_img04" src="https://github.com/user-attachments/assets/1f998f54-8b72-48e2-ab40-ecde3dcd4528" /></td>
+  </tr>
+</table>
 
 ## [Live] Live Streaming - Online realtime
 <a href="https://www.youtube.com/watch?v=14K_a2kKTxU"><img src="https://img.shields.io/badge/Python-API_Pagination-red?style=flat&logo=Python&logoColor=white"></a> <a href="https://github.com/IsaacAlves7/devsecops/blob/master/pages/cn.md"><img src="https://img.shields.io/badge/CN-LIVE-red?style=flat&logo=GitHub&logoColor=white"></a> <a href="https://github.com/IsaacAlves7/devsecops/blob/master/pages/cn.md"><img src="https://img.shields.io/badge/CN-LIVE-red?style=flat&logo=GitHub&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/Tensorflow-LIVE-red?style=flat&logo=Tensorflow&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/OpenAI-LIVE-red?style=flat&logo=OpenAI&logoColor=white"></a> <a href="https://youtu.be/qXJ3S3T3xJY"><img src="https://img.shields.io/badge/GCP-LIVE-red?style=flat&logo=googlecloud&logoColor=white"></a> <a href="https://notebooklm.google/"><img src="https://img.shields.io/badge/Excalidraw-LIVE-red?style=flat&logo=Excalidraw&logoColor=white"></a>
