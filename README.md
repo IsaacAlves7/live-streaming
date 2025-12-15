@@ -807,7 +807,8 @@ Atalhos e dicas essenciais do OBS Studio:
 
 - `Ctrl + x` pra fazer a transição
 - Pra fazer ocultação de legenda `F9`
-- Captura de video > Propriedades > Ajuste de video > Brilho - Contraste
+- `Captura de video` > Propriedades > Ajuste de video > Brilho - Contraste
+- Audio: USB
 
 Para quem transmite ao vivo, o OBS é uma central de controle completa. Ele permite configurar de forma nativa ou via plugins as principais plataformas de streaming, como Twitch, YouTube, Facebook Live e muitas outras. Basta obter a chave de transmissão do serviço escolhido e configurá-la no software. A partir daí, você tem controle total sobre a qualidade do seu stream, podendo ajustar a taxa de bits, a resolução e a taxa de quadros para encontrar o equilíbrio perfeito entre qualidade visual e estabilidade da conexão. O recurso de Estúdio de Gravação é vital para o profissionalismo, permitindo que você visualize e ajuste a próxima cena antes de torná-la ativa para o público, tudo sem interromper a transmissão principal.
 
