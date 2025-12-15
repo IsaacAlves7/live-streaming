@@ -826,6 +826,9 @@ Vá em `propriedades` e cole um dos endereços IP com as portas, nos seguintes e
 - Letra: /view/text
 - Bíblia Sagrada: /view/text2
 
+> [!Warning]
+> Se não aparecer a legenda, clique no botão `atualizar`, isso fará o OBS recarregar.
+
 # ⏯️ VoD - Video On Demand
 <img src="https://github.com/user-attachments/assets/5d47fb89-557e-4581-abb8-4d1b2fd19ea2" align="right" height="77">
 
