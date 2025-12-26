@@ -36,7 +36,7 @@ O **ProPresenter** é a escolha definitiva em software de produção e apresenta
 Os atalhos e dicas mais importantes do ProPresenter são:
 
 - Selecionar com o cursor do mouse o capítulo da Bíblia Sagrada e selecionar com as arrows ou espaço;
-- `F2` para ocultar as legendas
+- `F2` para ocultar as legendas, `F3` para ocultar a transmissão;
 - Para baixar imagens ou vídeos pra transições: Pexels, Pixelbay, Pinterest, Canva, etc.
 
 Etapas da Transmissão ao Vivo: O diagrama acima explica o que acontece nos bastidores para tornar isso possível.
