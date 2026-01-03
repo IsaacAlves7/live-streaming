@@ -1,0 +1,16 @@
+.vscode/
+media/
+web_modules/
+
+# Output of 'npm pack'
+*.tgz
+
+# Config files
+ts*.json
+
+# Test Coverage
+.nyc_output/
+coverage/
+
+# CI
+.github/workflows

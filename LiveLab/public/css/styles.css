@@ -1,0 +1,120 @@
+html,
+body,
+div {
+  /* background-color: #222; */
+}
+
+
+button, input, optgroup, select, textarea {
+  font-family: rektorant_light;
+}
+
+/* link styling in chat */
+a {
+  word-break: break-all;
+}
+
+/* show info about each video on hover */
+.video-container div,i  {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.video-container:hover div,i {
+  opacity: 1;
+}
+
+/* styling for opacity sliders in switchers */
+.slider-container {
+  width: 20px;
+}
+
+.slider.vertical {
+  transform: rotate(-90deg);
+  transform-origin: 100% 0%;
+  position: absolute;
+  height: 20px;
+  width: 116px;
+  right: 20px;
+  top: 0px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  background: #333;
+  border: 1px solid #555;
+  outline: none;
+  /* opacity: 0.7; */
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin: 0px;
+  height: 20px;
+  cursor: pointer;
+  /* transform: rotate(-90deg);
+  transform-origin: 100% 0%; */
+  /* position: absolute;
+  height: 20px;
+  width: 116px;
+  right: 20px;
+  top: 0px; */
+}
+
+.slider:hover {
+  opacity: 0.8;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 30px;
+  background: #555;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  opacity: 0.8;
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 30px;
+  background: #555;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* .slider {
+  -webkit-appearance: none;
+  background: #333;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 0.8;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #666;
+  border: 2px solid #333;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #999;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  cursor: pointer;
+} */

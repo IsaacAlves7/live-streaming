@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Metadata</title>
+  <style>
+    html {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    body {
+      margin: 40px;
+      /* padding-left: 8px; */
+      height: calc(100% - 80px);
+      font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+
+    body.dark {
+      color: white;
+      text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+        0px 8px 13px rgba(0, 0, 0, 0.1),
+        0px 18px 23px rgba(0, 0, 0, 0.1);
+    }
+
+    body.bug {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    #error {
+      color: red;
+    }
+
+    #game {
+      opacity: 1;
+      transition: opacity 0.75s ease;
+    }
+    body.loading #game {
+      opacity: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 72px;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    #game .details > p {
+      margin: 8px 0 0;
+      font-size: 36px;
+      font-weight: 500;
+    }
+    #game .details > p:last-child {
+      line-height: 1;
+    }
+  </style>
+</head>
+
+<body class="loading">
+  <article id="game">
+    <h1 id="title">Game Title Here</h1>
+    <section class="details">
+      <p>Programming an OBS Browser source for stream metadata</p>
+      <p>Q&A Welcomed!</p>
+    </section>
+  </article>
+  <section id="error" class="hidden"></section>
+  <script type="module" src="js/game-bug.js"></script>
+  <script nomodule src="/web_modules/app.nomodule.js"></script>
+</body>
+
+</html>
