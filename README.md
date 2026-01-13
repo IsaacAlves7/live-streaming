@@ -273,6 +273,8 @@ O NDI não tem como premissa operar abaixo de 30 FPS. Pelo contrário: ele foi p
 
 Dito isso, a sua conclusão pragmática continua válida: se o NDI não está entregando fluidez suficiente no cenário real, ele deixa de ser a melhor escolha. Em ambientes onde o hardware é limitado, a rede não é confiável ou a configuração precisa ser simples e imediata, insistir em NDI pode ser contraproducente.
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/60/AnyDesk-logo.svg" align="right" height="77">
+
 Usar **AnyDesk** (ou similares) como espelhamento de câmera é, tecnicamente, um workaround funcional, mas o paradigma muda completamente. Você deixa de usar um protocolo de vídeo profissional e passa a usar streaming de desktop remoto, com compressão agressiva, buffers maiores e latência variável. O AnyDesk não transmite “vídeo ao vivo” no sentido broadcast; ele transmite diferenças de framebuffer, priorizando usabilidade remota, não sincronismo audiovisual. Ainda assim, para exibição em telão, palestras simples ou situações onde a latência de algumas centenas de milissegundos não é crítica, ele pode cumprir o papel.
 
 O ponto-chave é entender o trade-off: NDI é pensado para qualidade, sincronismo e pipeline de vídeo; quando funciona bem, é muito superior. AnyDesk é pensado para acesso remoto, mas pode “quebrar o galho” quando o objetivo é apenas replicar imagem em tempo real, sem exigência técnica rigorosa. Se o fluxo NDI está abaixo de 30 FPS, o problema quase sempre está no ambiente — e não no protocolo —, mas às vezes corrigir isso custa mais esforço do que trocar a solução.
