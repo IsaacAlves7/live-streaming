@@ -25,11 +25,11 @@ O mais fascinante é que, do ponto de vista teórico, transmissão ao vivo é um
 
 E quando você pensa no streaming massivo, como YouTube, Twitch ou lives em igrejas, conferências e eventos, aí entra a **escala**. O servidor não transmite diretamente para cada espectador; ele replica o fluxo em **CDNs** (Content Delivery Networks), que são servidores geograficamente distribuídos que reduzem distância, latência e carga. A transmissão deixa de ser ponto-a-ponto e se torna um **sistema de distribuição global sincronizada**, baseado em cache, redirecionamento e balanceamento.
 
-<a href="https://renewedvision.com/propresenter"><img height="77" align="right" src="https://github.com/user-attachments/assets/c6a9f3d6-87c1-429d-b380-0e490ade7374" /></a>
-
 Ou seja, por trás de algo simples como “assistir uma live”, existe um conjunto de decisões arquiteturais, matemáticas e científicas extremamente complexas. Streaming é, no fundo, *engenharia de tempo real aplicada à comunicação digital*, lidando com a fluidez do tempo, instabilidades da rede e fragilidade da informação.
 
 Portanto há sempre um fluxo: `OBS Studio → ProPresenter → Telões` se conectam na prática, incluindo NDI, sincronização, pacotes multicast e ajustes de jitter.
+
+<a href="https://renewedvision.com/propresenter"><img height="77" align="right" src="https://github.com/user-attachments/assets/c6a9f3d6-87c1-429d-b380-0e490ade7374" /></a>
 
 O **ProPresenter** é a escolha definitiva em software de produção e apresentação ao vivo. Leve seus eventos para o próximo nível com os recursos intuitivos e visuais impressionantes do ProPresenter.
 
