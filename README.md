@@ -856,7 +856,7 @@ Vá em `propriedades` e cole um dos endereços IP com as portas, nos seguintes e
 - Bíblia Sagrada: /view/text2
 
 > [!Warning]
-> Se não aparecer a legenda, clique no botão `atualizar`, isso fará o OBS recarregar.
+> Se não aparecer a legenda, clique no botão `atualizar`, isso fará o OBS recarregar. Se não funcionar, reinicie o programa. E mesmo assim se não funcionar, verifique a conexão com a internet.
 
 # ⏯️ VoD - Video On Demand
 <img src="https://github.com/user-attachments/assets/5d47fb89-557e-4581-abb8-4d1b2fd19ea2" align="right" height="77">
