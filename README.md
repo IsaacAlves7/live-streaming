@@ -31,7 +31,23 @@ Portanto há sempre um fluxo: `OBS Studio → ProPresenter → Telões` se conec
 
 <a href="https://renewedvision.com/propresenter"><img height="77" align="right" src="https://github.com/user-attachments/assets/c6a9f3d6-87c1-429d-b380-0e490ade7374" /></a>
 
-O **ProPresenter** é a escolha definitiva em software de produção e apresentação ao vivo. Leve seus eventos para o próximo nível com os recursos intuitivos e visuais impressionantes do ProPresenter.
+O **ProPresenter** é um software profissional de apresentação multimídia voltado principalmente para igrejas, eventos ao vivo, conferências, transmissões e produções audiovisuais que precisam exibir conteúdo em tempo real com alto grau de controle visual. Diferente de ferramentas tradicionais como PowerPoint ou Keynote, ele não foi pensado para apresentações lineares, mas para ambientes dinâmicos, onde textos, vídeos, imagens, fundos animados, letras de músicas, versículos, lower thirds e overlays precisam ser disparados, alterados e sincronizados instantaneamente durante uma apresentação ou transmissão ao vivo.
+
+Na prática, o ProPresenter funciona como um sistema de controle de mídia ao vivo. Ele permite que um operador escolha exatamente o que aparece na tela em cada momento, podendo trocar fundos sem alterar o texto, animar transições, aplicar máscaras, layers e efeitos, além de controlar múltiplas saídas de vídeo ao mesmo tempo. Isso é muito usado em igrejas para projetar letras de músicas enquanto fundos animados rodam, ou em transmissões para enviar um sinal limpo para o projetor e outro diferente para o streaming, cada um com seu layout específico.
+
+Um dos grandes diferenciais do ProPresenter é a integração profunda com vídeo e broadcast. Ele se conecta facilmente a sistemas de transmissão, placas de captura, NDI, SDI e workflows de live streaming, permitindo que o conteúdo exibido vire parte direta da produção audiovisual. Além disso, ele suporta automações, disparo por MIDI, sincronização com áudio, controle remoto e integração com outros softwares de produção, o que o torna comum em ambientes profissionais onde timing e confiabilidade são críticos.
+
+Outro ponto forte é a gestão de conteúdo. O software organiza músicas, apresentações, bibliotecas visuais e textos de forma estruturada, permitindo reaproveitamento e rápida edição. No contexto religioso, por exemplo, ele se tornou quase um padrão porque facilita muito a projeção de letras, traduções, passagens bíblicas e avisos, tudo com consistência visual e sem quebrar o fluxo do culto ou do evento.
+
+Em resumo, o ProPresenter não é apenas um programa de slides, mas uma ferramenta de apresentação ao vivo e produção visual em tempo real. Ele existe para cenários onde a apresentação é parte de um espetáculo, transmissão ou experiência coletiva, e onde controle, flexibilidade e integração técnica são muito mais importantes do que seguir uma sequência fixa de slides.
+
+Ele é um software nativo de desktop, historicamente desenvolvido com tecnologias *nativas de alto desempenho*, principalmente **C++** no core e **Objective-C/Swift no macOS**, com camadas específicas para Windows também em código nativo. Isso é um ponto importante, porque explica por que o ProPresenter consegue lidar bem com vídeo em tempo real, múltiplas saídas de vídeo, aceleração por GPU, NDI, sincronização precisa e integração direta com hardware de broadcast — coisas que não combinam bem com a JVM como base principal.
+
+Java costuma aparecer em aplicações multiplataforma mais genéricas ou corporativas, mas não é uma escolha comum para softwares de apresentação ao vivo e produção audiovisual em tempo real, onde latência, controle de memória, acesso direto a APIs gráficas e estabilidade são cruciais. No caso do ProPresenter, a Renewed Vision sempre priorizou desempenho nativo e integração profunda com o sistema operacional e com pipelines de vídeo profissionais, o que praticamente exclui Java como linguagem central.
+
+Isso não significa que absolutamente nenhuma parte do ecossistema use Java ou tecnologias semelhantes — plugins, ferramentas auxiliares ou integrações externas podem usar linguagens diferentes —, mas o **produto principal não é um aplicativo Java**. Ele é um software nativo, construído com foco em performance gráfica, sincronização precisa e confiabilidade em ambiente ao vivo, o que está totalmente alinhado com as escolhas tecnológicas que eles fizeram.
+
+Ele é a escolha definitiva em software de produção e apresentação ao vivo. Leve seus eventos para o próximo nível com os recursos intuitivos e visuais impressionantes do ProPresenter.
 
 Os atalhos e dicas mais importantes do ProPresenter são:
 
