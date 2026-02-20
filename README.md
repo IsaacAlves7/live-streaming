@@ -85,6 +85,7 @@ Como funcionam as transmissões ao vivo de vídeo no YouTube, TikTok ou Twitch? 
 ![615214868_1531155262347380_785255251594905541_n](https://github.com/user-attachments/assets/56548835-5a8e-4c58-89e3-ae045999ade4)
 
 Toda transmissão ao vivo pro YouTube Live possui um endereço RTMP e uma chave para se conectar com o broadcast, no caso, pro OBS Studio se conectar com ele, você precisa copiar e colar essa chave dentro do OBS, como se fosse uma ponte.
+![FB_IMG_1728596527233](https://github.com/user-attachments/assets/5171142e-3412-42b3-9e3b-e5bf049731c2)
 
 <img width="1611" height="670" alt="image" src="https://github.com/user-attachments/assets/d0547485-e602-49bb-a3d9-4cad359c48c3" />
 
