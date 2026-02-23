@@ -258,11 +258,11 @@ No caso do fluxo `OBS → ProPresenter`: O NDI pra telão de show, funciona como
 
 <img height="77" align="right" src="https://github.com/user-attachments/assets/debeb11a-6764-4e4b-a61f-395ac04de902" />
 
-O **NDI - Network Device Interface** é um protocolo de vídeo sobre IP desenvolvido pela NewTek, projetado para transmitir vídeo e áudio de alta qualidade através de redes Ethernet em tempo real. Diferente dos métodos tradicionais de transmissão, que dependem de cabos SDI ou HDMI, o NDI elimina grande parte da limitação física ao transformar a rede local em uma infraestrutura capaz de transportar múltiplos fluxos de vídeo e áudio simultaneamente, com baixa latência e sem compressão perceptível. 
+O **NDI - Network Device Interface** é um protocolo de vídeo sobre IP desenvolvido pela NewTek, projetado para transmitir vídeo e áudio de alta qualidade através de redes Ethernet em tempo real. Diferente dos métodos tradicionais de transmissão, que dependem de cabos SDI ou HDMI, o NDI elimina grande parte da limitação física ao transformar a rede local em uma infraestrutura capaz de transportar múltiplos fluxos de vídeo e áudio simultaneamente, com baixa latência e sem compressão perceptível.
 
 Em outras palavras, ele transforma qualquer dispositivo conectado à rede como câmeras, computadores, switchers e softwares de produção em fontes e destinos de vídeo interconectados, tudo via IP, sem necessidade de hardware dedicado para cada conexão.
 
-**NDI** é frequentemente a ligação:
+NDI é frequentemente a ligação:
 
 ```
 NDI = Vídeo + Áudio + Metadata encapsulados em fluxos UDP multicast
@@ -306,9 +306,7 @@ NDI não é bala de prata porque depende fortemente de infraestrutura e configur
 
 <img height="77" align="right" src="https://github.com/user-attachments/assets/b8d0f4e7-eae2-42cb-91a7-bb525d7364a0" />
 
-Outra forma é utilizar o **Iriun Webcam** que é um software que transforma seu smartphone (Android ou iPhone) em uma webcam para o computador. Ele funciona como uma ponte entre: Câmera do celular e Sistema operacional (Windows/macOS/Linux). Para o computador, ele aparece como se fosse uma webcam USB tradicional.
-
-Arquiteturalmente ele faz:
+Outra forma é utilizar o **Iriun Webcam** que é um software que transforma seu smartphone (Android ou iPhone) em uma webcam para o computador. Ele funciona como uma ponte entre: Câmera do celular e Sistema operacional (Windows/macOS/Linux). Para o computador, ele aparece como se fosse uma webcam USB tradicional. Arquiteturalmente ele faz:
 
 1. O app no celular captura vídeo da câmera
 2. Codifica esse vídeo (normalmente H.264 ou similar)
@@ -317,15 +315,12 @@ Arquiteturalmente ele faz:
 5. Decodifica
 6. Registra como dispositivo virtual de webcam (driver virtual)
 
-Ou seja, ele cria uma virtual camera device no sistema. Quando você abre:
+Ou seja, ele cria uma virtual camera device no sistema. Quando você abre: Zoom, OBS, Teams, ProPresenter, Discord. Você seleciona: “`Iriun Webcam`”. Diferença estrutural:
 
-- Zoom
-- OBS
-- Teams
-- ProPresenter
-- Discord
+- Iriun → Webcam virtual local
+- NDI → Stream de vídeo via rede
 
-Você seleciona: “Iriun Webcam”.
+Iriun não é NDI nativamente. Mas você pode integrá-los.
 
 **4. Buffering e Jitter Control**: Um player nunca reproduz o stream no momento em que chega.
 
