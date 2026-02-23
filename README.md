@@ -304,6 +304,29 @@ O ponto-chave é entender o trade-off: NDI é pensado para qualidade, sincronism
 
 NDI não é bala de prata porque depende fortemente de infraestrutura e configuração corretas. Se essas condições não existem, optar por soluções de espelhamento como AnyDesk pode ser mais viável operacionalmente, mesmo sendo tecnicamente inferior do ponto de vista de vídeo profissional. É uma decisão de engenharia pragmática, não de pureza técnica.
 
+<img height="77" align="right" src="https://github.com/user-attachments/assets/b8d0f4e7-eae2-42cb-91a7-bb525d7364a0" />
+
+Outra forma é utilizar o **Iriun Webcam** que é um software que transforma seu smartphone (Android ou iPhone) em uma webcam para o computador. Ele funciona como uma ponte entre: Câmera do celular e Sistema operacional (Windows/macOS/Linux). Para o computador, ele aparece como se fosse uma webcam USB tradicional.
+
+Arquiteturalmente ele faz:
+
+1. O app no celular captura vídeo da câmera
+2. Codifica esse vídeo (normalmente H.264 ou similar)
+3. Envia via rede local (Wi-Fi) ou USB
+4. O cliente no computador recebe o stream
+5. Decodifica
+6. Registra como dispositivo virtual de webcam (driver virtual)
+
+Ou seja, ele cria uma virtual camera device no sistema. Quando você abre:
+
+- Zoom
+- OBS
+- Teams
+- ProPresenter
+- Discord
+
+Você seleciona: “Iriun Webcam”.
+
 **4. Buffering e Jitter Control**: Um player nunca reproduz o stream no momento em que chega.
 
 Ele armazena:
