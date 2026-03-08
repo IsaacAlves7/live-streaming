@@ -139,6 +139,30 @@ Compreender esses componentes, sua interação e seu impacto no processo de tran
   </tr>
 </table>
 
+![unnamed](https://github.com/user-attachments/assets/303e0b75-8d41-4e76-9a82-4df0fd732798)
+
+Aqui está um processo de 9 etapas:
+
+1. O usuário cria uma solicitação de upload de vídeo e fornece os arquivos de vídeo junto com os detalhes sobre o vídeo.
+
+2. Os arquivos de vídeo bruto são enviados para um Armazenamento de Objetos (como S3).
+
+3. Além disso, os metadados são salvos em um banco de dados, assim como em um cache para uma recuperação mais rápida quando necessário.
+
+4. Os arquivos de vídeo bruto são enviados para transcodificação para um servidor especial de transcodificação. Transcodificação é o processo de codificar os vídeos em taxas de bits e formatos compatíveis para streaming.
+
+5. O vídeo transcodificado é enviado para outro armazenamento de objetos.
+
+6. A notificação para conclusão da transcodificação é enviada para um serviço especial por meio de uma fila de mensagens.
+
+7. O Manipulador de Status de Transcodificação atualiza o banco de dados de metadados e o cache com os detalhes mais recentes do vídeo.
+
+8. O usuário levanta uma solicitação de streaming de vídeo que vai para uma Rede de Entrega de Conteúdo (CDN).
+
+9. A CDN recupera o vídeo do armazenamento de objetos para streaming. Ele também armazena o vídeo localmente para pedidos de streaming subsequentes.
+
+> A palavra é sua: O que mais você adicionaria para criar um sistema parecido com o YouTube?
+
 ## [Live] Live Streaming - Online realtime
 <a href="https://www.youtube.com/watch?v=14K_a2kKTxU"><img src="https://img.shields.io/badge/Python-API_Pagination-red?style=flat&logo=Python&logoColor=white"></a> <a href="https://github.com/IsaacAlves7/devsecops/blob/master/pages/cn.md"><img src="https://img.shields.io/badge/CN-LIVE-red?style=flat&logo=GitHub&logoColor=white"></a> <a href="https://github.com/IsaacAlves7/devsecops/blob/master/pages/cn.md"><img src="https://img.shields.io/badge/CN-LIVE-red?style=flat&logo=GitHub&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/Tensorflow-LIVE-red?style=flat&logo=Tensorflow&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/OpenAI-LIVE-red?style=flat&logo=OpenAI&logoColor=white"></a> <a href="https://youtu.be/qXJ3S3T3xJY"><img src="https://img.shields.io/badge/GCP-LIVE-red?style=flat&logo=googlecloud&logoColor=white"></a> <a href="https://notebooklm.google/"><img src="https://img.shields.io/badge/Excalidraw-LIVE-red?style=flat&logo=Excalidraw&logoColor=white"></a>
 
