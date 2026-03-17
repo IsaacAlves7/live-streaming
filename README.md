@@ -929,4 +929,6 @@ Desenvolver uma plataforma de VoD competitiva requer não apenas expertise técn
 
 A evolução constante dos codecs de vídeo, como o AV1, e a crescente demanda por conteúdos em 4K e HDR tornam este um campo em permanente desenvolvimento, onde a inovação tecnológica é tão crucial quanto a qualidade do conteúdo oferecido.
 
-Pode ser armazenado em um Bucket S3, ou uma instância da Amazon EC2
+Pode ser armazenado em um Bucket S3, ou uma instância da Amazon EC2.
+
+# 🔍 Observability
