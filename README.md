@@ -910,7 +910,7 @@ Vá em `propriedades` e cole um dos endereços IP com as portas, nos seguintes e
 > [!Warning]
 > Se não aparecer a legenda, clique no botão `atualizar`, isso fará o OBS recarregar. Se não funcionar, reinicie o programa. E mesmo assim se não funcionar, verifique a conexão com a internet.
 
-# ⏯️ VoD - Video On Demand
+# ⏯️ [Live] VoD - Video On Demand
 <img src="https://github.com/user-attachments/assets/5d47fb89-557e-4581-abb8-4d1b2fd19ea2" align="right" height="77">
 
 O **VoD - Video on Demand** (vídeo sob demanda), é o modelo de distribuição de conteúdo de vídeo que permite aos usuários selecionar e assistir a vídeos quando e onde quiserem, diferentemente da programação linear tradicional da televisão. Esta revolução no consumo de mídia transformou completamente a indústria do entretenimento, criando novas possibilidades de negócio e mudando os hábitos de audiência em escala global.
@@ -931,4 +931,63 @@ A evolução constante dos codecs de vídeo, como o AV1, e a crescente demanda p
 
 Pode ser armazenado em um Bucket S3, ou uma instância da Amazon EC2.
 
-# 🔍 Observability
+# 🔍 [Live] Observability
+Um sistema completo de monitoramento para uma pipeline de live streaming, incluindo métricas de QoS/QoE, controle de latência, DRM e fallback. O projeto é composto por um simulador em Python (que gera métricas realistas), Prometheus para coleta e armazenamento, e Grafana para visualização com um dashboard pré-configurado. Tudo é orquestrado com Docker Compose para fácil execução.
+
+```
+.
+├── docker-compose.yml
+├── stream_monitor
+│   ├── Dockerfile
+│   └── stream_monitor.py
+├── prometheus
+│   └── prometheus.yml
+└── grafana
+    ├── provisioning
+    │   ├── datasources
+    │   │   └── datasource.yml
+    │   └── dashboards
+    │       └── dashboard.yml
+    └── dashboards
+        └── streaming_dashboard.json
+```
+
+Como Executar
+Crie os diretórios e arquivos conforme a estrutura acima.
+
+No diretório raiz do projeto, execute:
+
+```sh
+docker-compose up -d
+```
+
+Acesse:
+
+1. Métricas simuladas: http://localhost:8000/metrics
+2. Prometheus: http://localhost:9090
+3. Grafana: http://localhost:3000 (login: admin / admin)
+
+No Grafana, vá em Dashboards > Manage e selecione "Live Streaming Pipeline Monitor" para visualizar os gráficos.
+
+Funcionalidades do Monitoramento:
+
+- QoS: bitrate de ingestão, latência de transcodificação, resposta da CDN.
+
+- QoE: nível de buffer, proporção de rebuffering, trocas de bitrate.
+
+Latência: métrica fim-a-fim.
+
+DRM: histograma de tempo de aquisição de licença e contador de erros.
+
+Fallback: status ativo (0/1) e contador de trocas.
+
+Observabilidade: todos os logs do simulador são exibidos no console do container stream_monitor e podem ser acessados via docker logs -f stream_monitor.
+
+Personalização
+Para ajustar os intervalos de simulação, modifique os time.sleep no script Python.
+
+Para adicionar alertas, configure regras no Prometheus ou crie painéis de alerta no Grafana.
+
+Para métricas adicionais, estenda o script e reinicie os containers.
+
+Este ambiente fornece uma base prática para entender como uma pipeline real de live streaming pode ser monitorada em produção.
